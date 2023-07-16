@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.4dd20ddb.css",
-    "main.js": "/static/js/main.2d82eb05.js",
+    "main.js": "/static/js/main.607bd541.js",
     "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
     "static/media/abstract-luxury-blur-grey-color-gradient-used-as-background-studio-wall-display-your-products.jpg": "/static/media/abstract-luxury-blur-grey-color-gradient-used-as-background-studio-wall-display-your-products.b08ca8793667c3d07f66.jpg",
     "static/media/3WyW.gif": "/static/media/3WyW.da6d6ea950c0183b86c3.gif",
     "index.html": "/index.html",
     "main.4dd20ddb.css.map": "/static/css/main.4dd20ddb.css.map",
-    "main.2d82eb05.js.map": "/static/js/main.2d82eb05.js.map",
+    "main.607bd541.js.map": "/static/js/main.607bd541.js.map",
     "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4dd20ddb.css",
-    "static/js/main.2d82eb05.js"
+    "static/js/main.607bd541.js"
   ]
 }
