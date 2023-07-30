@@ -1,0 +1,233 @@
+.post-main{
+          width:50%;
+          margin: 10px auto;
+          height:350px;
+          display:flex;
+          flex-direction: column;
+          border-radius: 10px;
+          background-color: rgb(253, 251, 251);
+          box-shadow: rgba(10, 10, 10, 0.801) 0px 5px 15px;
+          position: relative;
+          padding: 5px;
+
+
+}
+.post-main.expand{
+          height:250px;
+          width: 100%;
+}
+.post-main.br-change{
+          border-bottom-left-radius:0%;
+          border-bottom-right-radius: 0%;
+}
+.post-main.expand.br-change{
+          border-bottom-left-radius:0%;
+          border-bottom-right-radius: 0%;
+
+}
+.post-main span{
+          width:100%;
+
+          display: flex;
+          color:rgb(102, 79, 79);
+          text-align: justify;
+          margin: 5px 0px;
+          
+          
+}
+.post-main span.img{
+          color: rgb(48, 48, 133);
+
+
+
+}
+.post-main span.topic{
+          font-size: 20px;
+          font-weight: 600;
+          color: black;
+}
+.post-main span.small{
+          font-size: 10px;
+}
+
+.post-main span.profile{
+          font-size: 15px;
+          font-weight: 500;
+          
+          color:rgb(48, 48, 133);
+          cursor: pointer;
+
+}
+.post-main span.buttons0{
+          
+          justify-content: center;
+          
+
+}
+.post-main span.buttons0 button{
+          border: none;
+          font-size: 15px;
+          background-color: rgb(17, 150, 61);
+          color:white;
+          border-radius: 5px;
+          padding: 10px;
+          transition: 0.4s;
+
+}
+.post-main span.buttons0 button:hover{
+          background-color: rgb(41, 146, 102);
+          transform: scale(1.1);
+}
+.post-main span.buttons{
+          padding:10px;
+          font-size: 15px;
+          justify-content: center;
+          cursor: pointer;
+}
+
+.post-main span.buttons i{
+          margin:0px 10px;
+          font-size: 20px; 
+}
+.post-main i.bxs-like{
+          position:absolute;
+          left:80%;
+          top:250px;
+          font-size: 80px;
+          color:rgb(56, 160, 56);
+          
+}
+.post-main span.fistcount{
+          color:rgb(49, 44, 44);
+          font-size: 15px;
+          justify-content: center;
+          padding:10px;
+}
+.post-main div.comments{
+          width:100%;
+          height:300px;
+          position: absolute;
+          top:100%;
+          left:0%;
+          background-color: rgb(235, 237, 240);
+          flex-direction: column;
+         
+          animation: opencomment 0.4s;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          z-index: 10;
+           
+}
+@keyframes opencomment {
+          0%{
+                    height:0px;
+          }
+          100%{
+                    height:300px;
+          }
+          
+}
+.post-main div.comments.none{
+          display:none;
+}
+.post-main div.comments.none.flex{
+          display:flex;
+}
+
+.post-main div.comments .commentbox{
+          width:100%;
+          height:80%;
+          overflow-y: scroll;
+          padding:10px;
+
+          
+}
+.post-main div.comments .commentbox span{
+          width:100%;
+          margin:10px 0px;
+          display:flex;
+          flex-direction: column;
+}
+.post-main div.comments .commentbox span span{
+          width:100%;
+          font-size: 10px;
+          margin:5px 0px;
+}
+.post-main div.comments .commentbox span span.comment-message{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          
+          
+          
+         
+          
+}
+.post-main div.comments .commentbox span span.comment-message i{
+          font-size: 20px;
+          transition: 0.3s;
+}
+.post-main div.comments .commentbox span span.comment-message i:hover{
+          transform: scale(1.1);
+}
+
+.post-main div.comments .commentbox span span.user{
+          font-size: 15px;
+          font-weight: 600;
+}
+.post-main div.comments .commentbox span span.comment-message p{
+          background-color: rgb(196, 191, 191);
+          padding: 10px;
+          border-radius: 5px;
+          width: fit-content;
+          font-size: 15px;
+          
+}
+.post-main div.comments .commentbox::-webkit-scrollbar{
+          display:none;
+}
+.post-main div.comments form.commentform{
+          width:100%;
+          height:20%;
+          padding:10px;
+          display:flex;
+          justify-content: space-between;
+          align-items: center;
+}
+.post-main div.comments form.commentform input{
+          width:70%;
+          border-radius: 5px;
+          border: none;
+          outline: none;
+          padding: 10px;
+          background-color: rgb(194, 191, 191);
+          font-size: 15px;
+}
+.post-main div.comments form.commentform input::placeholder{
+          color:grey;
+          font-size: 15px;
+}
+.post-main div.comments form.commentform button{
+          padding:10px;
+          border-radius: 50%;
+          font-size: 15px;
+          color:green;
+          border:none;
+          
+}
+/* ----------------------------------------media query -----------------------------------------------*/
+@media (max-width:500px) {
+          .post-main{
+                    height: 250px;
+                    width: 80%;
+          }
+          .post-main.expand{
+                    height:250px;
+          }
+          .post-main span.buttons0 button{
+                    font-size: 10px;
+          }
+
+          
+}
+

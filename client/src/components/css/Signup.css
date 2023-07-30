@@ -1,0 +1,126 @@
+.signup{
+          width: 100%;
+          height: 100vh;
+          
+          display: flex;
+          justify-content: center;
+          align-items: center;
+}
+
+
+
+
+.signup .form {
+          width: 50%;
+          padding: 10px;
+          background-color: rgb(194, 186, 186);
+          opacity: 0.8;
+          display: flex;
+          flex-direction: column;
+          border-radius: 5px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+}
+
+.signup .form span {
+          width: 100%;
+          margin: 10px 0px;
+          display: flex;
+          justify-content: space-between;
+          font-size: 20px;
+          color: rgb(0, 0, 0);
+          padding: 10px;
+
+
+}
+
+.signup .form span input {
+          width: 60%;
+          outline: none;
+          border: none;
+          background-color: black;
+          border-bottom: 2px solid white;
+          padding: 10px;
+          color: grey;
+          border-top-right-radius: 5px;
+          border-top-left-radius: 5px;
+          opacity: 0.6;
+}
+
+.signup .form span input:hover {
+          background-color: rgb(31, 29, 29);
+          color: white;
+
+
+}
+
+.signup .form span input::placeholder {
+          color: grey;
+
+}
+
+.signup .form span.button {
+          width: 100%;
+          justify-content: center;
+
+}
+
+.signup .form span.button button {
+          padding: 10px;
+          font-size: 15px;
+          border: none;
+          background-color: rgb(19, 90, 43);
+          border-radius: 5px;
+          color: rgb(201, 200, 200);
+          transition: 0.4s;
+}
+
+.signup .form span.button button:hover {
+          background-color: rgb(28, 126, 44);
+          color: white;
+          transform: scale(1.1);
+
+}
+
+.signup .form span a {
+          text-decoration: none;
+          color: rgb(41, 146, 102);
+}
+
+.signup .form span.button {
+          justify-content: center;
+          font-size: 10px;
+
+}
+.signup .form span.message{
+          font-size: 15px;
+          color: grey;
+
+}
+
+
+@media (max-width:500px) {
+          .signup .form {
+                    width:90%;
+
+          }
+          .signup .form span {
+                    width: 100%;
+                    margin:5px 0px;
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 15px;
+                    color: white;
+                    padding: 5px;
+          
+          
+          }
+          .signup .form span.button button {
+                    font-size: 10px;
+          }
+          .signup .form span.message{
+                    font-size: 10px;
+          }
+}
+
