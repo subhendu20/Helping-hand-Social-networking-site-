@@ -7,7 +7,7 @@ import postimg from './css/download (5).jpeg'
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
-function Post({ post }) {
+function Post({ post,type }) {
           const navigate = useNavigate();
           const [comments, setcomments] = useState({ comments: '' })
           const [loading, setloading] = useState(true)
@@ -135,7 +135,7 @@ function Post({ post }) {
                               <span className='small'>{`${post.Date}`}</span>
 
 
-                              <span className="buttons0"><button onClick={opencomments}>Explore</button></span>
+                              <span className="buttons0"><button onClick={opencomments}>{(type==='post')?'explore':'Raise hand'}</button></span>
                               <span className="buttons" id='opento' onClick={opencomments}><i class='bx bxs-comment-detail'></i>{commentlist.list.length} comments</span>
                               <div className="comments none" id={post._id}>
                                         <hr />

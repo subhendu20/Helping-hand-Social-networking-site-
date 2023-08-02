@@ -130,7 +130,7 @@ const[eventlist,seteventlist]=useState({events:[]})
           <div className="posts-prefered-city">
           {
                               (postlist.posts.length!==0) && postlist.posts.map((e)=>{
-                                return <Post key={e._id} post={e} />
+                                return <Post key={e._id} post={e} type={'post'} />
                               })
                              }
 
@@ -155,7 +155,7 @@ const[eventlist,seteventlist]=useState({events:[]})
           <div className="eventlist">
           {
                               (eventlist.events.length!==0) && eventlist.events.map((e)=>{
-                                return <Post key={e._id} post={e} />
+                                return <Post key={e._id} post={e} type={'service'} />
                               })
                              }
           

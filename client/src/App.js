@@ -19,6 +19,7 @@ import Searchpage from './components/Searchpage';
 import cover from '../src/components/css/abstract-luxury-blur-grey-color-gradient-used-as-background-studio-wall-display-your-products.jpg'
 import Popupwindowevent from './components/Popupwindowevent';
 import logo from './components/css/hhlogo.png'
+import Info from './components/Info';
 
 function App() {
   const navigate = useNavigate();
@@ -301,6 +302,9 @@ function App() {
                   <span className='side-span'> <a href='/settings' className='center-a'> <i class='bx bxs-cog' ></i>
                     <p className='side-a col' >Settings</p></a>
                   </span>
+                  <span className='side-span'> <a href='/info' className='center-a'> <i class='bx bxs-info-circle'></i>
+                    <p className='side-a col' >Info</p></a>
+                  </span>
 
                   <hr className='sidebar-hr' />
 
@@ -334,6 +338,7 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='/editprofile' element={<Editprofile />} />
                 <Route path='/settings' element={<Setting />} />
+                <Route path='/info' element={<Info/>} />
                 <Route path='/userprofile/:userId' element={<Userprofile />} />
                 <Route path='/queryresult/:query' element={<Searchpage />} />
               </Routes>

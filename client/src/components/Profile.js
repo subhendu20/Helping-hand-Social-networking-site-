@@ -188,7 +188,7 @@ function Profile() {
             <p>Share your need and service</p>
             <span className="icons"><span onClick={open_post_popup}><i class='bx bxs-conversation' ></i>Post</span>
 
-              <span onClick={open_event_popup}><i class='bx bxs-conversation' ></i>Event</span></span>
+              <span onClick={open_event_popup}><i class='bx bxs-conversation' ></i>Service</span></span>
 
           </div>
           <div className="mypostlist">

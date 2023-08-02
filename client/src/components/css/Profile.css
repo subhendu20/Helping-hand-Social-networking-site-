@@ -324,7 +324,7 @@
           
           }
           .profile .profile-details .about .aboutbox span.buttons span.followers .dropup-follower-menu2 span{
-                    width: 100%;
+                    width: 80%;
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
