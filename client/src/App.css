@@ -646,7 +646,7 @@ img {
   .sidebar{
     width:100%;
     opacity:1;
-    height: 5%;
+    height: auto;
     position: absolute;
     bottom: 0;
     left: 0;
