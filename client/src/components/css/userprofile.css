@@ -127,7 +127,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   font-size: 20px;
   color: black;
   margin: 5px 0px;
@@ -138,7 +138,7 @@
 }
 
 .user-profile .profile-details .about .aboutbox span.buttons span.followers .dropup-follower-menu span img {
-  margin: 10px auto;
+  margin: 10px 10px;
   width: 40px;
   height: 40px;
   overflow: hidden;
@@ -376,7 +376,7 @@
     width: 80%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     font-size: 10px !important;
     color: black;
     margin: 3px auto;
@@ -388,7 +388,7 @@
   }
 
   .user-profile .profile-details .about .aboutbox span.buttons span.followers .dropup-follower-menu span img {
-    margin: 5px auto;
+    margin: 5px 5px;
     width: 20px;
     height: 20px;
 
