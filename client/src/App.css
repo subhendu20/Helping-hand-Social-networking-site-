@@ -423,16 +423,6 @@ p {
 
 .sidebar.reduce {
   width: 5%;
-  animation: colapse 0.5s;
-}
-@keyframes colapse{
-  0%{
-            width:10%;
-  }
-  100%{
-            width:5%;
-  }
-
 }
 
 .span-center{
@@ -659,6 +649,7 @@ img {
     position: absolute;
     bottom: 0;
     left: 0;
+    padding: 10px;
     
 
   }
