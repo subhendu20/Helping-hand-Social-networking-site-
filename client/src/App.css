@@ -98,7 +98,7 @@
   color:rgb(88, 83, 83);
   font-size: 15px;
   cursor: default;
-  background-color: rgb(156, 157, 158);
+  background:none;
 }
 .App nav span.search button{
   background: none;
@@ -118,6 +118,7 @@
 }
 .App nav span.search input:hover{
   color:black;
+  background:none;
 }
 
 
@@ -704,7 +705,7 @@ img {
   }
 
   .sidebar aside .icons span i{
-    font-size: 20px;
+    font-size: 25px;
   }
   .sidebar aside .icons span{
     font-size: 10px;
@@ -817,6 +818,15 @@ img {
   .sidebar aside .buttons {
     display: none;
   }
+
+  .sidebar aside .icons span:hover {
+    background-color:rgb(77, 155, 123);;
+  }
+  
+  .sidebar aside .icons span:hover i{
+    color: black;
+  }
+  
   
   
   
