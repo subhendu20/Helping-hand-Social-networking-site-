@@ -70,9 +70,9 @@ function Post({ post, type }) {
 
   const getHours = async(date) => {
     var d1 = await new Date(date);
-    var d2 = await new Date(Date.now());
+    var d2 = await new Date();
 
-    var diff =await  d2.getTime() - d1.getTime();
+    var diff =await  (d2.getTime() - d1.getTime());
 
     var hoursdiff = await diff / (1000 * 60 * 60);
     console.log(hoursdiff)
