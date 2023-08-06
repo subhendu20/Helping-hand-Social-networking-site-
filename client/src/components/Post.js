@@ -55,7 +55,7 @@ function Post({ post, type }) {
 
   }
 
-  const getdays = async(d) => {
+  const getdays = (d) => {
     const now = Date.now()
                     const prev = new Date(d)
                     const diffTime = Math.abs(prev - now);
@@ -67,7 +67,7 @@ function Post({ post, type }) {
 
   }
 
-  const getHours = async(d) => {
+  const getHours = (d) => {
     const now = Date.now()
                     const prev = new Date(d)
                     const diffTime = Math.abs(prev - now);
@@ -79,7 +79,7 @@ function Post({ post, type }) {
 
   }
 
-  const getMinutes = async(d) => {
+  const getMinutes = (d) => {
     const now = Date.now()
                     const prev = new Date(d)
                     const diffTime = Math.abs(prev - now);
@@ -182,7 +182,7 @@ function Post({ post, type }) {
               return <span key={e._id}>
                 <span className="user">{e.username}</span>
                 <span className="comment-message"><p>{e.comment}</p>{(post.user === e.user) ? <i class='bx bxs-message-square-x' onClick={() => delete_comment(e._id)}></i> : <></>}</span>
-                <span className="time">{e.date}</span>
+                <span className="time">{(getdays(e.date)>=1)?`${getdays(e.date)} Days ago`:`Today`}</span>
               </span>
 
             })
