@@ -62,6 +62,7 @@ function Post({ post, type }) {
     var diff =await  d2.getTime() - d1.getTime();
 
     var daydiff = await diff / (1000 * 60 * 60 * 24);
+    console.log(daydiff)
     return daydiff
 
 
@@ -74,7 +75,9 @@ function Post({ post, type }) {
     var diff =await  d2.getTime() - d1.getTime();
 
     var hoursdiff = await diff / (1000 * 60 * 60);
+    console.log(hoursdiff)
     return hoursdiff
+   
 
 
   }
@@ -183,7 +186,7 @@ function Post({ post, type }) {
               return <span key={e._id}>
                 <span className="user">{e.username}</span>
                 <span className="comment-message"><p>{e.comment}</p>{(post.user === e.user) ? <i class='bx bxs-message-square-x' onClick={() => delete_comment(e._id)}></i> : <></>}</span>
-                <span className="time">{(getdays(e.date)>=1)?`${getdays(e.date)} days ago`:(getHours(e.date)>=1)?`${getdays(e.date)} days ago`:getMinutes(e.date)}</span>
+                <span className="time">{(getdays(e.date)>=1)?`${getdays(e.date)} days ago`:(getHours(e.date)>=1)?`${getHours(e.date)} Hours ago`:`${getMinutes(e.date)} Minutes ago`}</span>
               </span>
 
             })
