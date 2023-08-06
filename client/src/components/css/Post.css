@@ -1,7 +1,7 @@
 .post-main{
           width:50%;
           margin: 10px auto;
-          height:350px;
+          min-height:350px;
           display:flex;
           flex-direction: column;
           border-radius: 10px;
@@ -218,7 +218,7 @@
 /* ----------------------------------------media query -----------------------------------------------*/
 @media (max-width:500px) {
           .post-main{
-                    height: 250px;
+                    min-height: 250px;
                     width: 80%;
           }
           .post-main.expand{
