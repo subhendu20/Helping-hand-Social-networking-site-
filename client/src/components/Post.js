@@ -182,7 +182,8 @@ function Post({ post, type }) {
               return <span key={e._id}>
                 <span className="user">{e.username}</span>
                 <span className="comment-message"><p>{e.comment}</p>{(post.user === e.user) ? <i class='bx bxs-message-square-x' onClick={() => delete_comment(e._id)}></i> : <></>}</span>
-                <span className="time">{(getdays(e.Date)>=1)?`${getdays(e.Date)} Days ago`:`Today`}</span>
+                {/* <span className="time">{(getdays(e.Date)>=1)?`${getdays(e.Date)} Days ago`:`Today`}</span> */}
+                <span className="time">{e.Date}</span>
               </span>
 
             })

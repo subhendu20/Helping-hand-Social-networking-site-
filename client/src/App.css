@@ -363,11 +363,12 @@
   
   justify-content: flex-start;
   flex-wrap:nowrap;
-  font-size: 20px;
+
   color: aliceblue;
   padding: 10px 0;
 
   font-size: 15px;
+  font-weight: 400;
   border-radius: 5px;
   
 
@@ -380,6 +381,8 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: center;
+  font-weight: 400;
 }
 
 .sidebar aside .icons span:hover {
@@ -416,6 +419,7 @@ p {
 }
 .sidebar aside .icons span a{
   text-decoration: none;
+  font-weight: 400;
 
 }
 .side-span.icon-center{
@@ -470,13 +474,17 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  font-weight: 400;
 }
 
 .sidebar aside .icons2 span:hover {
-  background-color: rgb(31, 30, 30);
+  background-color: rgb(8, 92, 36);
 }
 
 .sidebar aside .icons2 span:hover i {
+  color: white;
+}
+.sidebar aside .icons2 span:hover a{
   color: white;
 }
 

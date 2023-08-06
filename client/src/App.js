@@ -266,7 +266,7 @@ function App() {
           {/*---------------------------------------------- nav -------------------------------------------------*/}
           <nav className="nav">
             <span className="logo"><a href='/'>HHand</a></span>
-            <span className="search"><form><input type="text" placeholder='search' name='query' onChange={changequery} /><button><i class='bx bx-search-alt-2' onClick={submit_query}></i></button></form></span>
+            <span className="search"><form><input type="text" placeholder='search' name='query' onChange={changequery} autoComplete='false' /><button><i class='bx bx-search-alt-2' onClick={submit_query}></i></button></form></span>
             <span className="menu">
 
               <img class='bx bxl-product-hunt' src={(profiledata.profileimg !== '') ? profiledata.profileimg : cover} alt='loading' onClick={open_dropdown} /><i class='bx bx-chevron-down' id='pointer' onClick={open_dropdown}></i>
@@ -317,7 +317,7 @@ function App() {
                   {
                     (followerlist.followers.length !== 0) && followerlist.followers.map((e) => {
                       return <span className='side-span' key={e._id}><a href={`/userprofile/${e.followid}`} className='center-a'> <img src={(e.followimg !== '') ? e.followimg : cover} alt="loading" />
-                        <p className='side-a col'>{e.followname}</p></a>
+                        <p className='side-a col'>{e.followname.split(' ')[0]}</p></a>
                       </span>
                     })
                   }
