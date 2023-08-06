@@ -43,7 +43,7 @@ function Searchpage() {
                     
 
 
-          },[loading])
+          },[loading,query])
 
 
 

@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.279ef360.css",
-    "main.js": "/static/js/main.679a8495.js",
+    "main.css": "/static/css/main.0aba4bb6.css",
+    "main.js": "/static/js/main.68a86c07.js",
     "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
     "static/media/abstract-luxury-blur-grey-color-gradient-used-as-background-studio-wall-display-your-products.jpg": "/static/media/abstract-luxury-blur-grey-color-gradient-used-as-background-studio-wall-display-your-products.b08ca8793667c3d07f66.jpg",
     "static/media/3WyW.gif": "/static/media/3WyW.da6d6ea950c0183b86c3.gif",
     "index.html": "/index.html",
-    "main.279ef360.css.map": "/static/css/main.279ef360.css.map",
-    "main.679a8495.js.map": "/static/js/main.679a8495.js.map",
+    "main.0aba4bb6.css.map": "/static/css/main.0aba4bb6.css.map",
+    "main.68a86c07.js.map": "/static/js/main.68a86c07.js.map",
     "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.279ef360.css",
-    "static/js/main.679a8495.js"
+    "static/css/main.0aba4bb6.css",
+    "static/js/main.68a86c07.js"
   ]
 }
