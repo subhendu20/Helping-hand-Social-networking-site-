@@ -35,7 +35,7 @@ router.post('/addcomment/:id',async(req,res)=>{
                     user: userid,
                     username: users.name,
                     postid: req.params.id,
-                    Date: new Date(Date.now()).getDate() + ":" + new Date(Date.now()).getMonth() + ":" + new Date(Date.now()).getFullYear(),
+                    Date: new Date(),
                     comment: comments
           })
           newcomment.save().then(() => {
