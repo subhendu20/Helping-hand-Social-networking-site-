@@ -63,7 +63,7 @@ function Popupwindow() {
     
            <form className='postform'>
       <i class='bx bx-x' onClick={close_pop_profile}></i>
-      <span className="text">Post Your Need and Services</span>
+      <span className="text">Post Your Need</span>
       
       <span className='headings'>Topic (Use specific keyword,Ex- Medicine)</span>
       <span className="title"><input type="text" name='topic' placeholder='Title' onChange={change} /></span>

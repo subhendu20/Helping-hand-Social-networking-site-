@@ -10,7 +10,7 @@ const post = new mongoose.Schema({
           },
           userimg:{
                     type:String,
-                    required:true,
+                    
 
           },
           topic:{
@@ -36,5 +36,5 @@ const post = new mongoose.Schema({
           },
         
 })
-const newpost = new mongoose.model('postcollection',post)
+const newpost = new mongoose.model('postcollectionlist',post)
 module.exports=newpost;

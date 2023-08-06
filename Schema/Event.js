@@ -10,7 +10,7 @@ const event = new mongoose.Schema({
           },
           userimg:{
                     type:String,
-                    required:true,
+                    
 
           },
           topic:{
@@ -37,5 +37,5 @@ const event = new mongoose.Schema({
           
           
 })
-const newevent = new mongoose.model('event',event)
+const newevent = new mongoose.model('eventlist',event)
 module.exports=newevent;

@@ -179,6 +179,9 @@
                     height: 200px;
                     height:15%;
           }
+          .update-profile form.details{
+                    height: 80%;
+          }
 
 
 }

@@ -6,6 +6,7 @@ import Events from './Events'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import gif from './css/3WyW.gif'
+import cover from './css/abstract-luxury-blur-grey-color-gradient-used-as-background-studio-wall-display-your-products.jpg'
 
 
 function Home() {
@@ -140,7 +141,7 @@ const[eventlist,seteventlist]=useState({events:[]})
           <div className="profile-list">
                     {
           (areaprofiles.list.length!==0) && areaprofiles.list.map((e)=>{
-            return <span key={e._id}><img src={e.profileimg} alt="loading" onClick={()=>navigate(`/userprofile/${e._id}`)}/> <p className='name'>{e.name}</p> <p id='area'>{e.area}</p></span>
+            return <span key={e._id}><img src={(e.profileimg!==null)?e.profileimg:cover} alt="loading" onClick={()=>navigate(`/userprofile/${e._id}`)}/> <p className='name'>{e.name}</p> <p id='area'>{e.area}</p></span>
 
           })
         }
