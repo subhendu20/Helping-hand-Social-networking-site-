@@ -126,7 +126,7 @@ const[eventlist,seteventlist]=useState({events:[]})
 
 
   return (
-    (postlist.posts.length!==0 )?
+   
     <div className='Home'>
           <div className="posts-prefered-city">
           {
@@ -164,8 +164,8 @@ const[eventlist,seteventlist]=useState({events:[]})
          
           
       
-    </div>:
-      <img src={gif} alt="loading" className='loading' />
+    </div>
+      
     
 )
 }
