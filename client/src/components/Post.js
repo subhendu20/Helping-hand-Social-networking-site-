@@ -60,7 +60,9 @@ function Post({ post, type }) {
                     const prev = new Date(d)
                     const diffTime = Math.abs(prev - now);
                     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                    console.log(diffDays)
                     return diffDays
+                    
 
 
   }
@@ -70,6 +72,7 @@ function Post({ post, type }) {
                     const prev = new Date(d)
                     const diffTime = Math.abs(prev - now);
                     const diffhours = Math.ceil(diffTime / (1000 * 60 * 60 ));
+                    console.log(diffhours)
                     return diffhours
    
 
@@ -81,6 +84,7 @@ function Post({ post, type }) {
                     const prev = new Date(d)
                     const diffTime = Math.abs(prev - now);
                     const diffmin = Math.ceil(diffTime / (1000 * 60 ));
+                    
                     return diffmin
 
 
@@ -178,7 +182,7 @@ function Post({ post, type }) {
               return <span key={e._id}>
                 <span className="user">{e.username}</span>
                 <span className="comment-message"><p>{e.comment}</p>{(post.user === e.user) ? <i class='bx bxs-message-square-x' onClick={() => delete_comment(e._id)}></i> : <></>}</span>
-                <span className="time">{(getdays(e.date)>=1)?getdays(e.date):(getHours(e.date)>=1)?getHours(e.date):getMinutes(e.date)}</span>
+                <span className="time">{e.date}</span>
               </span>
 
             })
