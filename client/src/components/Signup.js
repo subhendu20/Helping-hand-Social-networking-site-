@@ -45,8 +45,8 @@ function Signup() {
                                         <span>Mobile : <input type="Number" name="mobile" onChange={change} required  minLength={10}/> </span>
                                         <span>Area(city/town/vill) : <input type="text" name="area" onChange={change} required/> </span>
                                         <span>State : <input type="text" name="state" onChange={change} required/> </span>
-                                        <span>Password : <input type="text" name="password" onChange={change} required /> </span>
-                                        <span>Confirm Password : <input type="text" name="confirmpassword" onChange={change} required/> </span>
+                                        <span>Password : <input type="password" name="password" onChange={change} required /> </span>
+                                        <span>Confirm Password : <input type="password" name="confirmpassword" onChange={change} required/> </span>
                                         <span className='button'><button onClick={handlesubmit}>Sign Up</button></span>
                                         <span className='message'>Have an Account <a href="/">Log In</a></span>
 

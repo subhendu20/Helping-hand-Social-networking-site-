@@ -141,7 +141,7 @@ const[eventlist,seteventlist]=useState({events:[]})
           <div className="profile-list">
                     {
           (areaprofiles.list.length!==0) && areaprofiles.list.map((e)=>{
-            return <span key={e._id}><img src={(e.profileimg!==null)?e.profileimg:cover} alt="loading" onClick={()=>navigate(`/userprofile/${e._id}`)}/> <p className='name'>{e.name}</p> <p id='area'>{e.area}</p></span>
+            return <span key={e._id}><img src={(e.profileimg)?e.profileimg:cover} alt="loading" onClick={()=>navigate(`/userprofile/${e._id}`)}/> <p className='name'>{e.name}</p> <p id='area'>{e.area}</p></span>
 
           })
         }
