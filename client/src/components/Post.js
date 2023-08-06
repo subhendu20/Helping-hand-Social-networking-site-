@@ -55,41 +55,33 @@ function Post({ post, type }) {
 
   }
 
-  const getdays = async(date) => {
-    var d1 = await new Date(date);
-    var d2 = await new Date(Date.now());
-
-    var diff =await  d2.getTime() - d1.getTime();
-
-    var daydiff = await diff / (1000 * 60 * 60 * 24);
-    console.log(daydiff)
-    return `${daydiff} Days ago`
+  const getdays = async(d) => {
+    const now = Date.now()
+                    const prev = new Date(d)
+                    const diffTime = Math.abs(prev - now);
+                    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                    return diffDays
 
 
   }
 
-  const getHours = async(date) => {
-    var d1 = await new Date(date);
-    var d2 = await new Date();
-
-    var diff =await  (d2.getTime() - d1.getTime());
-
-    var hoursdiff = await diff / (1000 * 60 * 60);
-    console.log(hoursdiff)
-    return `${hoursdiff} Hours ago`
+  const getHours = async(d) => {
+    const now = Date.now()
+                    const prev = new Date(d)
+                    const diffTime = Math.abs(prev - now);
+                    const diffhours = Math.ceil(diffTime / (1000 * 60 * 60 ));
+                    return diffhours
    
 
 
   }
 
-  const getMinutes = async(date) => {
-    var d1 = await new Date(date);
-    var d2 = await new Date(Date.now());
-
-    var diff =await  d2.getTime() - d1.getTime();
-
-    var mindiff = await diff / (1000 * 60 );
-    return `${mindiff}`
+  const getMinutes = async(d) => {
+    const now = Date.now()
+                    const prev = new Date(d)
+                    const diffTime = Math.abs(prev - now);
+                    const diffmin = Math.ceil(diffTime / (1000 * 60 ));
+                    return diffmin
 
 
   }
