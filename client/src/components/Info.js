@@ -3,7 +3,7 @@ import './css/info.css'
 
 function Info() {
   return (
-    <div className='info'>
+    <section className='info'>
       <span className="title">
         Introduction
 
@@ -102,7 +102,7 @@ function Info() {
       </span>
 
 
-    </div>
+    </section>
   )
 }
 

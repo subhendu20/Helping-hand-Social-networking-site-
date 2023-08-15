@@ -38,9 +38,10 @@
           right: 10%;
           padding: 10px;
           z-index: 3;
-          background-color: grey;
+          background:none;
           border-radius: 50%;
           z-index: 6;
+          overflow: hidden;
 
 }
 
@@ -160,27 +161,43 @@
 }
 
 
-@media (max-width:500px) {
+@media (max-width:600px) {
           .update-profile form.profile-image {
-                    width: 100px;
-                    height: 100px;
-                    left:9%;
-                    top:5%;
+                    width: 50px;
+                    height: 50px;
+                    left:5%;
+                    top:10%;
           }
           .update-profile form.profile-image .profile-upload-box{
                     bottom:0%;
                     right:0%;
                     padding:5px;
+                    background: none;
           }
+          
           .update-profile form.coverimg .upload-box{
                     padding:5px;
           }
           .update-profile form.coverimg {
-                    height: 200px;
+                    
                     height:15%;
           }
           .update-profile form.details{
-                    height: 80%;
+                    height: auto;
+                    min-height: 500px;
+                    overflow-y: scroll;
+          }
+          .update-profile form.details::-webkit-scrollbar{
+                    display: none;
+          }
+          .update-profile form.details span{
+                    padding: 5px;
+          }
+          .update-profile form.details span input{
+                    margin: 5px 0px;
+          }
+          .update-profile form.profile-image .profile-upload-box{
+                    background: none;
           }
 
 

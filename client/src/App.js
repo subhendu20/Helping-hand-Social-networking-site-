@@ -20,18 +20,28 @@ import cover from '../src/components/css/abstract-luxury-blur-grey-color-gradien
 import Popupwindowevent from './components/Popupwindowevent';
 import logo from './components/css/hhlogo.png'
 import Info from './components/Info';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { useDispatch } from 'react-redux';
+import { logout } from './action';
+import { login } from './action';
 
 function App() {
+  const logstate = useSelector((state) => state.changeStatus)
+  const dispatch = useDispatch()
+
+
+
+
   const navigate = useNavigate();
   const cookie = new Cookies()
   const [searchmessage, setsearchmessage] = useState({ query: '' })
-  const [sendlog, setsendlog] = useState(false)
+  
 
   const [loading, setloading] = useState(false)
   const [profiledata, setprofiledata] = useState({ name: '', profileimg: '' })
 
   const [followloading, setfollowloading] = useState(false)
-  const [follow, setfollow] = useState('follow')
+  
   const [followerlist, setfollowerlist] = useState({ followers: [] })
 
   const open_dropdown = () => {
@@ -43,7 +53,7 @@ function App() {
     setsearchmessage({ ...searchmessage, [e.target.name]: e.target.value })
   }
 
-  const [logstatus, setlogstatus] = useState(false)
+ 
 
   const collapse_sidebar = async () => {
 
@@ -117,7 +127,8 @@ function App() {
 
 
       await cookie.remove('logtoken')
-      window.open('/', '_self')
+      await navigate('/')
+      dispatch(logout())
 
     }).catch((e) => {
 
@@ -172,16 +183,12 @@ function App() {
 
   useEffect(() => {
     const check = cookie.get('logtoken')
-    if (check) {
-
-      setlogstatus(true)
-    }
-    else {
-      setlogstatus(false)
+    if (check !== undefined) {
+      dispatch(login())
 
     }
 
-  }, [cookie, sendlog])
+  })
 
 
 
@@ -211,7 +218,7 @@ function App() {
     })
     setloading(true)
 
-  }, [loading])
+  }, [loading,logstate])
 
 
 
@@ -219,21 +226,25 @@ function App() {
 
 
   useEffect(() => {
-    setfollowloading(true)
-    axios.get(`/comment/getfollows`, {
-      withCredentials: true
-    }).then(async (res) => {
-      setfollowerlist({
-        followers: res.data
+    
+    if(cookie.get('logtoken')!==undefined){
+      axios.get(`/comment/getfollows`, {
+        withCredentials: true
+      }).then(async (res) => {
+        setfollowerlist({
+          followers: res.data
+        })
+      }).catch((e) => {
+  
+  
       })
-    }).catch((e) => {
+
+    }
+    
+  
 
 
-    })
-    setfollowloading(false)
-
-
-  }, [followloading])
+  }, [logstate])
 
 
 
@@ -241,11 +252,13 @@ function App() {
 
 
   return (
-    (logstatus === false) ? <Routes>
+    (!logstate) ? <Routes>
       <Route path='/signup' element={<Signup />} />
       <Route path='/' element={<Login />} />
     </Routes> :
       <div className="window">
+
+
         <div className="popup-profile-window hide" id='popup-profile-window'>
           <Popupwindow />
         </div>
@@ -285,54 +298,54 @@ function App() {
 
           </nav>
 
-          <div className="content">
+          <section className="content">
             {/*------------------------------------------------------ sidebar -----------------------------------------------*/}
-            <div class="sidebar reduce">
-              <aside>
-                <div class="buttons">
-                  <span className='side-span' id='menubtn'><i class='bx bx-menu' onClick={collapse_sidebar}></i></span>
-                </div>
-                <div class="icons">
-                  <span className='side-span'><a href="/" className='center-a'> <i class='bx bx-home'></i>
+            <aside class="sidebar reduce">
+              
+                <ul class="buttons">
+                  <li className='side-span' id='menubtn'><i class='bx bx-menu' onClick={collapse_sidebar}></i></li>
+                </ul>
+                <ul class="icons">
+                  <li className='side-span'><a href="/" className='center-a'> <i class='bx bx-home'></i>
                     <p className='side-a col'>Home</p></a>
-                  </span>
-                  <span className='side-span'> <a href='/profile' className='center-a'> <i class='bx bxl-product-hunt'></i>
+                  </li>
+                  <li className='side-span'> <a href='/profile' className='center-a'> <i class='bx bxl-product-hunt'></i>
                     <p className='side-a col'>{profiledata.name}</p></a>
-                  </span>
-                  <span className='side-span'> <a href='/settings' className='center-a'> <i class='bx bxs-cog' ></i>
+                  </li>
+                  <li className='side-span'> <a href='/settings' className='center-a'> <i class='bx bxs-cog' ></i>
                     <p className='side-a col' >Settings</p></a>
-                  </span>
-                  <span className='side-span'> <a href='/info' className='center-a'> <i class='bx bxs-info-circle'></i>
+                  </li>
+                  <li className='side-span'> <a href='/info' className='center-a'> <i class='bx bxs-info-circle'></i>
                     <p className='side-a col' >Info</p></a>
-                  </span>
+                  </li>
 
                   <hr className='sidebar-hr' />
 
 
 
-                </div>
-                <div className="divider">Following</div>
-                <div class="icons2">
+                </ul>
+                
+                <ul class="icons2">
 
                   {
                     (followerlist.followers.length !== 0) && followerlist.followers.map((e) => {
-                      return <span className='side-span' key={e._id}><a href={`/userprofile/${e.followid}`} className='center-a'> <img src={(e.followimg !== '') ? e.followimg : cover} alt="loading" />
+                      return <li className='side-span' key={e._id}><a href={`/userprofile/${e.followid}`} className='center-a'> <img src={(e.followimg !== '') ? e.followimg : cover} alt="loading" />
                         <p className='side-a col'>{e.followname.split(' ')[0]}</p></a>
-                      </span>
+                      </li>
                     })
                   }
 
-                </div>
+                </ul>
 
 
-              </aside>
+              
 
 
 
-            </div>
+            </aside>
 
             {/* ------------------------------------------------content ----------------------------------------*/}
-            <div className="route" id='route'>
+            <section className="route" id='route'>
               <Routes>
                 <Route path='/profile' element={<Profile />} />
                 <Route path='/' element={<Home />} />
@@ -343,10 +356,10 @@ function App() {
                 <Route path='/queryresult/:query' element={<Searchpage />} />
               </Routes>
 
-            </div>
+            </section>
 
 
-          </div>
+          </section>
 
 
 

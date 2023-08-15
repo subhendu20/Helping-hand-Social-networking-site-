@@ -218,7 +218,7 @@
 /* ----------------------------------------media query -----------------------------------------------*/
 @media (max-width:500px) {
           .post-main{
-                    min-height: 250px;
+                    min-height: 250px!important;
                     width: 80%;
           }
           .post-main.expand{

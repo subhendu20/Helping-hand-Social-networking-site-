@@ -19,14 +19,17 @@ function Post({ post, type }) {
 
   const submitcomment = async (e) => {
     e.preventDefault()
-    $('#message_input').val('')
+    
 
     axios.post(`/comment/addcomment/${post._id}`, comments, {
       withCredentials: true
     }).then(async (res) => {
 
 
-      setloading(false)
+      await setloading(false)
+      $('#message_input').val('')
+      
+
 
 
 

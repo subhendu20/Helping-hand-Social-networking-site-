@@ -5,9 +5,23 @@ import Cookies from 'universal-cookie'
 import axios from 'axios'
 import $ from 'jquery'
 import "jquery-ui-dist/jquery-ui";
+import logo from './css/h-letter-36999.png'
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { useDispatch } from 'react-redux';
+import { login } from '../action';
+import { logout } from '../action';
+
 
 
 function Login() {
+  const logstate = useSelector((state) => state.changeStatus)
+  const dispatch = useDispatch()
+ 
+
+
+
+
+
           const navigate = useNavigate();
           const cookie = new Cookies()
           const [formdata, setformdata] = useState({ mobile:null, password:""})
@@ -28,8 +42,9 @@ function Login() {
             }).then(async (res) => {
               
               if(res.data==='logged in successfully'){
+                dispatch(login())
                
-                window.location.reload(false);
+                
 
               }else{
                 $('#popup-warning-window').removeClass('hide')
@@ -43,7 +58,9 @@ function Login() {
 
           }
   return (
-    <div className='login'>
+    <section className='login'>
+      <img src={logo} alt="logo" className="logo" />
+      <section className='page-title'>Log into your account</section> 
        <form className="form">
        <div className="popup-warning-window hide" id='popup-warning-window'>
         <p>Invalid details!</p>
@@ -57,7 +74,7 @@ function Login() {
                                         <span className='signuplink'><p>Don't have an Account?</p><a href="/signup">Sign up</a></span>
 
                               </form>
-    </div>
+    </section>
   )
 }
 

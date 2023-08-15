@@ -3,9 +3,26 @@
           height: 100vh;
     
           display: flex;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
           position: relative;
+}
+
+.login img{
+  width: 150px;
+  height: 150px;
+
+  position: absolute;
+          top:10px;
+          left:5%;
+
+}
+.login section.page-title{
+  font-size: 30px;
+  color:rgb(36, 35, 35);
+  font-weight: 500;
+  margin: 10px 0px;
 }
 
 
@@ -56,23 +73,23 @@
           width: 60%;
           outline: none;
           border: none;
-          background-color: black;
+          background-color: rgb(122, 121, 121);
           border-bottom: 2px solid white;
           padding: 10px;
-          color: grey;
+          color: rgb(53, 52, 52);
           border-top-right-radius: 5px;
           border-top-left-radius: 5px;
 }
 
 .login .form span input:hover {
-          background-color: rgb(31, 29, 29);
-          color: white;
+          background-color: rgb(161, 159, 159);
+          color: rgb(7, 7, 7);
 
 
 }
 
 .login .form span input::placeholder {
-          color: grey;
+          color: rgb(85, 81, 81);
           animation: 0.4s;
 }
 
@@ -136,6 +153,17 @@
                     width: 80%;
           }
 
+          .login img{
+            width: 40px;
+            height: 40px;
+            
+          
+          }
+          .login section.page-title{
+            font-size: 15px;
+            margin: 5px 0px;
+           
+          }
           .login .form span.signuplink {
                     font-size: 10px;
           }

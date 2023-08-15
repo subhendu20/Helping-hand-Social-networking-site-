@@ -320,43 +320,40 @@
   height: 100%;
   background-color: rgb(77, 155, 123);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+
   font-family: Roboto, arial, sans-serif;
   font-weight: 200;
 
   position: relative;
   z-index:15;
+ 
   
   /* will be removed during development */
   
   transition: 0.2s;
   position: relative;
   
-  z-index: 1;
+  z-index: 10;
   overflow: hidden;
 }
 
-.sidebar aside {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-
-
-}
 
 
 
 
-.sidebar aside .icons {
+
+.sidebar .icons {
   width: 100%;
   display: flex;
   height: auto;
   flex-direction: column;
+  list-style-type: none;
   
 
 }
 
-.sidebar aside .icons span {
+.sidebar .icons li {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -376,7 +373,7 @@
 
 
 }
-.sidebar aside .icons span a{
+.sidebar .icons li a{
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -385,20 +382,20 @@
   font-weight: 400;
 }
 
-.sidebar aside .icons span:hover {
+.sidebar .icons li:hover {
   background-color: rgb(8, 92, 36);
 }
 
-.sidebar aside .icons span:hover i{
+.sidebar .icons li:hover i{
   color: white;
 }
 
-.sidebar aside .icons span i,
+.sidebar .icons li i,
 p {
   margin: 0px 15px;
 }
 
-.sidebar aside .icons span i {
+.sidebar .icons li i {
   color: rgb(5, 53, 33);
   font-size: 25px;
 }
@@ -407,17 +404,17 @@ p {
 .side-a.col {
   display: none;
 }
-.sidebar aside .icons span a p{
+.sidebar .icons li a p{
  
   color:rgb(5, 53, 33);
   margin: 0px 15px;
 
 
 }
-.sidebar aside .icons span:hover a p{
+.sidebar .icons li:hover a p{
   color:white
 }
-.sidebar aside .icons span a{
+.sidebar .icons li a{
   text-decoration: none;
   font-weight: 400;
 
@@ -441,16 +438,17 @@ p {
 
 
 
-.sidebar aside .icons2 {
+.sidebar .icons2 {
   width: 100%;
   display: flex;
+  list-style-type: none;
   flex: 1;
   flex-direction: column;
   
 
 }
 
-.sidebar aside .icons2 span {
+.sidebar .icons2 li {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -469,7 +467,7 @@ p {
 
 
 }
-.sidebar aside .icons2 span a{
+.sidebar .icons2 li a{
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -477,23 +475,23 @@ p {
   font-weight: 400;
 }
 
-.sidebar aside .icons2 span:hover {
+.sidebar .icons2 li:hover {
   background-color: rgb(8, 92, 36);
 }
 
-.sidebar aside .icons2 span:hover i {
+.sidebar .icons2 li:hover i {
   color: white;
 }
-.sidebar aside .icons2 span:hover a{
+.sidebar .icons2 li:hover a{
   color: white;
 }
 
-.sidebar aside .icons2 span i,
+.sidebar .icons2 li i,
 p {
   margin: 0px 15px;
 }
 
-.sidebar aside .icons2 span i {
+.sidebar .icons2 li i {
   color: rgb(120, 36, 189);
   font-size: 25px;
 }
@@ -502,23 +500,23 @@ p {
 .side-a.col {
   display: none;
 }
-.sidebar aside .icons2 span a p{
+.sidebar .icons2 li a p{
  
   color:rgb(5, 53, 33);
   margin: 0px 15px;
 
 
 }
-.sidebar aside .icons2 span img{
+.sidebar .icons2 li img{
   width:30px;
   height:30px;
   border-radius: 50%;
 }
-.sidebar aside .icons2 span a{
+.sidebar .icons2 li a{
   text-decoration: none;
 
 }
-.sidebar aside .divider{
+.sidebar .divider{
   color:rgb(5, 53, 33);
   text-align: center;
   font-size: 15px;
@@ -538,13 +536,14 @@ p {
 
 
 
-.sidebar aside .buttons {
+.sidebar .buttons {
   display: flex;
   flex-direction: column;
+  list-style-type: none;
 
 }
 
-.sidebar aside .buttons span {
+.sidebar .buttons li {
   display: flex;
   flex-direction: row;
   padding: 10px 0rem;
@@ -553,23 +552,23 @@ p {
 
 }
 
-.sidebar aside .buttons span i,
+.sidebar .buttons li i,
 img {
   margin: 0px 15px;
 }
 
-.sidebar aside .buttons span i {
+.sidebar .buttons li i {
   color: rgb(5, 53, 33);
   font-size: 25px;
 }
 
-.sidebar aside .buttons span img {
+.sidebar .buttons li img {
   height: 30px;
   width: 50%;
   transition:0.5s;
 }
 
-.sidebar aside .buttons span i:hover {
+.sidebar .buttons li i:hover {
   color: white;
   transform: scale(1.2);
 }
@@ -656,6 +655,7 @@ img {
     width:100%;
     opacity:1;
     height: auto;
+    flex-direction: row;
     
     position: absolute;
     bottom: 0;
@@ -664,7 +664,7 @@ img {
     
 
   }
-  .sidebar aside .icons span{
+  .sidebar .icons li{
     padding: 0px;
   }
   .sidebar.reduce{
@@ -690,32 +690,29 @@ img {
     }
   
   }
-  .sidebar aside{
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
+  
 
-  .sidebar aside .buttons span i{
+  .sidebar .buttons li i{
     font-size: 15px;
     margin:0px 3px;
   }
   
 
-  .sidebar aside .divider{
+  .sidebar .divider{
     display: none;
 
 
 
   }
-  .sidebar aside .icons2{
+  .sidebar .icons2{
     display:none;
 
   }
 
-  .sidebar aside .icons span i{
+  .sidebar .icons li i{
     font-size: 25px;
   }
-  .sidebar aside .icons span{
+  .sidebar .icons li{
     font-size: 10px;
   }
   
@@ -788,16 +785,16 @@ img {
   
 
 
- .sidebar aside .icons2 span i{
+ .sidebar .icons2 li i{
     font-size: 15px;
     margin:0px 3px;
   }
-  .sidebar aside .icons2 span{
+  .sidebar .icons2 li{
     font-size: 10px;
     padding: 5px;
   }
   
-  .sidebar aside .icons2 span a p{
+  .sidebar .icons2 li a p{
     margin:0px 3px;
   }
   
@@ -806,15 +803,15 @@ img {
 
 
 
-  .sidebar aside .icons2 span img{
+  .sidebar .icons2 li img{
     width:15px;
     height:15px;
     border-radius: 50%;
   }
-  .sidebar aside .icons2{
+  .sidebar .icons2{
     height: 75%;
   }
-  .sidebar aside .icons{
+  .sidebar .icons{
     height: auto;
     flex-direction: row;
     justify-content: space-evenly;
@@ -823,15 +820,15 @@ img {
   .sidebar-hr{
     display: none;
   }
-  .sidebar aside .buttons {
+  .sidebar .buttons {
     display: none;
   }
 
-  .sidebar aside .icons span:hover {
+  .sidebar .icons li:hover {
     background-color:rgb(77, 155, 123);;
   }
   
-  .sidebar aside .icons span:hover i{
+  .sidebar .icons li:hover i{
     color: black;
   }
   

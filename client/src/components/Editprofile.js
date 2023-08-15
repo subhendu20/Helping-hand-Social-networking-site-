@@ -17,16 +17,7 @@ function Editprofile() {
   })
   const [coverimg,setcoverimg] = useState('')
   const [ profileimg,setprofileimg]=useState('')
-  const [formdata,setformdata]= useState({
-    name:'',
-    about:'',
-    profileimg:'',
-    coverimg:'',
-    area:'',
-    state:''
-
-
-  })
+  
   const navigate = new useNavigate()
 
   const setprofile=(e)=>{
@@ -36,7 +27,7 @@ function Editprofile() {
           filereader.onload =()=>{
             
             setprofileimg(filereader.result)
-            setformdata({...formdata,profileimg:filereader.result})
+            
             setprevalue({...prevalue,profileimg:filereader.result})
           }
           filereader.onerror =(e)=>{
@@ -52,7 +43,7 @@ function Editprofile() {
           filereader.onload =()=>{
             
             setcoverimg(filereader.result)
-            setformdata({...formdata,coverimg:filereader.result})
+            
             setprevalue({...prevalue,coverimg:filereader.result})
           }
           filereader.onerror =(e)=>{
@@ -66,7 +57,7 @@ function Editprofile() {
         }  
 
         const changes=(e)=>{
-          setformdata({...formdata,[e.target.name]:e.target.value})
+          setprevalue({...prevalue,[e.target.name]:e.target.value})
       
         }
 
@@ -75,7 +66,7 @@ function Editprofile() {
           
           e.preventDefault()
           
-          axios.put('/users/update', formdata, {
+          axios.put('/users/update', prevalue, {
             withCredentials: true
         }).then((res)=>{
           if(res.data==='error'){
@@ -96,6 +87,9 @@ function Editprofile() {
 
         }
 
+
+
+
         useEffect(()=>{
           setloading(false)
             
@@ -112,11 +106,7 @@ function Editprofile() {
             state:res.data.state
         
           })
-         
-          
-          
-        
-        }).catch((e)=>{
+         }).catch((e)=>{
           
         })
         setloading(true)

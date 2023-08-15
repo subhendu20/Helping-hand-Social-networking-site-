@@ -5,8 +5,25 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          flex-direction: column;
+          position: relative;
 }
 
+.signup img{
+          width: 150px;
+          height: 150px;
+          
+          position: absolute;
+          top:10px;
+          left:5%;
+
+}
+.signup section.page-title{
+          font-size: 30px;
+          color:rgb(36, 35, 35);
+          font-weight: 500;
+          margin: 10px 0px;
+}
 
 
 
@@ -18,6 +35,7 @@
           display: flex;
           flex-direction: column;
           border-radius: 5px;
+          position: relative;
           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 
@@ -39,24 +57,24 @@
           width: 60%;
           outline: none;
           border: none;
-          background-color: black;
+          background-color: rgb(122, 121, 121);
           border-bottom: 2px solid white;
           padding: 10px;
-          color: grey;
+          color: rgb(53, 52, 52);
           border-top-right-radius: 5px;
           border-top-left-radius: 5px;
           opacity: 0.6;
 }
 
 .signup .form span input:hover {
-          background-color: rgb(31, 29, 29);
-          color: white;
+          background-color: rgb(161, 159, 159);
+          color: rgb(7, 7, 7);
 
 
 }
 
 .signup .form span input::placeholder {
-          color: grey;
+          color: rgb(85, 81, 81);
 
 }
 
@@ -98,12 +116,44 @@
           color: grey;
 
 }
+.popup-warning-signup-window{
+          position:absolute;
+          width:100%;
+          height:auto;
+          bottom:100%;
+          left:0%;
+          background-color: white;
+        
+          z-index: 15;
+          box-shadow: rgba(10, 10, 10, 0.801) 0px 5px 15px;
+          border-radius: 5px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px;
+        
+        }
+.popup-warning-signup-window.hide{
+          display: none;
+        }
 
 
 @media (max-width:500px) {
           .signup .form {
                     width:90%;
 
+          }
+          .signup img{
+                    width: 40px;
+                    height: 40px;
+                    
+          
+          }
+          .signup section.page-title{
+                    font-size: 15px;
+                    color:rgb(36, 35, 35);
+                    font-weight: 500;
+                    margin: 5px 0px;
           }
           .signup .form span {
                     width: 100%;
