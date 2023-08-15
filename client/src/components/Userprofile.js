@@ -8,9 +8,15 @@ import "jquery-ui-dist/jquery-ui";
 import { useParams } from 'react-router-dom';
 import './css/userprofile.css'
 import { useNavigate } from 'react-router-dom';
-import gif from './css/3WyW.gif'
+import gif from './css/3WyW.gif';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { useDispatch } from 'react-redux';
 
 function Userprofile() {
+          const countstate = useSelector((state) => state.changeCount)
+
+
+
           const navigate = useNavigate();
           const { userId } = useParams()
 
@@ -210,7 +216,7 @@ function Userprofile() {
 
 
 
-          }, [postloading])
+          }, [postloading,countstate])
 
 
 

@@ -9,6 +9,10 @@
           position:relative;
 
 }
+.postform-load{
+          opacity: 0.8;
+          pointer-events: none;
+}
 .postform i{
           position: absolute;
           top:0%;

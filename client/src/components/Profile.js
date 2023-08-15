@@ -6,10 +6,15 @@ import "jquery-ui-dist/jquery-ui";
 import defaultimg from './css/abstract-luxury-blur-grey-color-gradient-used-as-background-studio-wall-display-your-products.jpg'
 import Post from './Post';
 import { useNavigate } from 'react-router-dom';
-import gif from './css/3WyW.gif'
+import gif from './css/Infinity-1s-200px.svg'
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { useDispatch } from 'react-redux';
 
 
 function Profile() {
+  const countstate = useSelector((state) => state.changeCount)
+
+
   const navigate = useNavigate();
   const [profiledata, setprofiledata] = useState({ name: '', area: '', state: '', profileimg: '', coverimg: '', about: '' })
   const [loading, setloading] = useState(true)
@@ -91,7 +96,7 @@ function Profile() {
 
 
 
-  }, [postloading])
+  }, [postloading,countstate])
 
 
 

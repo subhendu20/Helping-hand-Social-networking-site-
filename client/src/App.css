@@ -825,7 +825,7 @@ img {
   }
 
   .sidebar .icons li:hover {
-    background-color:rgb(77, 155, 123);;
+    background:none!important;
   }
   
   .sidebar .icons li:hover i{

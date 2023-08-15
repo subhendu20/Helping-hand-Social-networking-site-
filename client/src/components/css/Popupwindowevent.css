@@ -9,6 +9,10 @@
           position:relative;
 
 }
+.eventform-load{
+          opacity: 0.8;
+          pointer-events: none;
+}
 .eventform i{
           position: absolute;
           top:0%;

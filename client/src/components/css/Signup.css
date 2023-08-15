@@ -10,12 +10,12 @@
 }
 
 .signup img{
-          width: 150px;
-          height: 150px;
+          width: 120px;
+          height: 120px;
           
           position: absolute;
           top:10px;
-          left:5%;
+          left:45%;
 
 }
 .signup section.page-title{

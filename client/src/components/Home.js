@@ -5,11 +5,17 @@ import img from './css/download (5).jpeg'
 import Events from './Events'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
-import gif from './css/3WyW.gif'
+import gif from './css/Infinity-1s-200px.svg';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { useDispatch } from 'react-redux';
 import cover from './css/abstract-luxury-blur-grey-color-gradient-used-as-background-studio-wall-display-your-products.jpg'
 
 
 function Home() {
+  const logstate = useSelector((state) => state.changeStatus)
+  const countstate = useSelector((state) => state.changeCount)
+
+
   const navigate = useNavigate();
   const[getpostloading,setgetpostloading]=useState(false)
   const[postlist,setpostlist]=useState({posts:[]})
@@ -50,7 +56,7 @@ const[eventlist,seteventlist]=useState({events:[]})
       
     })
     setgetpostloading(true)
-  },[getpostloading])
+  },[getpostloading,countstate])
 
   //---------------------------------------------- profile near area--------------------------------------//
 
@@ -70,7 +76,7 @@ const[eventlist,seteventlist]=useState({events:[]})
     
     })
     setprofileloading1(true)
-  },[profileloading1])
+  },[profileloading1,countstate])
 
 
 
@@ -97,7 +103,7 @@ const[eventlist,seteventlist]=useState({events:[]})
     })
     setprofileloading2(true)
     
-  },[profileloading2])
+  },[profileloading2,countstate])
 
 
    //-----------------------------------------------event near me-------------------------------------//
@@ -120,14 +126,14 @@ const[eventlist,seteventlist]=useState({events:[]})
       
     })
     setgeteventloading(true)
-  },[geteventloading])
+  },[geteventloading,countstate])
 
 
 
 
   return (
    
-    <div className='Home'>
+    (postlist.posts.length!==0) ? <div className='Home'>
           <div className="posts-prefered-city">
           {
                               (postlist.posts.length!==0) && postlist.posts.map((e)=>{
@@ -164,7 +170,7 @@ const[eventlist,seteventlist]=useState({events:[]})
          
           
       
-    </div>
+    </div>:<img src={gif} className='loading' alt='loading'/>
       
     
 )

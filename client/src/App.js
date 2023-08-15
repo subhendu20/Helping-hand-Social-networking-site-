@@ -24,9 +24,11 @@ import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { useDispatch } from 'react-redux';
 import { logout } from './action';
 import { login } from './action';
+import gif from './components/css/Infinity-1s-200px.svg'
 
 function App() {
   const logstate = useSelector((state) => state.changeStatus)
+  
   const dispatch = useDispatch()
 
 
@@ -218,7 +220,7 @@ function App() {
     })
     setloading(true)
 
-  }, [loading,logstate])
+  }, [logstate])
 
 
 
@@ -345,7 +347,7 @@ function App() {
             </aside>
 
             {/* ------------------------------------------------content ----------------------------------------*/}
-            <section className="route" id='route'>
+           {(profiledata.name!=='') ?<section className="route" id='route'>
               <Routes>
                 <Route path='/profile' element={<Profile />} />
                 <Route path='/' element={<Home />} />
@@ -356,7 +358,7 @@ function App() {
                 <Route path='/queryresult/:query' element={<Searchpage />} />
               </Routes>
 
-            </section>
+            </section>:<img src={gif} className='loading' alt='loading'/>}
 
 
           </section>

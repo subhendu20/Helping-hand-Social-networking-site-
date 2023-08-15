@@ -4,9 +4,19 @@ import { useState } from 'react'
 import $ from 'jquery'
 import "jquery-ui-dist/jquery-ui";
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 import './css/Popupwindowevent.css'
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { useDispatch } from 'react-redux';
+import { countDecrease } from '../action/update';
+import { countIncrease } from '../action/update';
 
 function Popupwindowevent() {
+  const navigate = useNavigate();
+  const countstate = useSelector((state) => state.changeCount)
+  const dispatch = useDispatch()
+
+
           const[formdata,setformdata]=useState({
                     topic:'',
                     description:'',
@@ -15,6 +25,7 @@ function Popupwindowevent() {
                   })
 
                   const [imgdata,setimgdata]=useState('')
+                  const[subloading,setsubloading]=useState(false)
 
                   const close_event_popup=()=>{
                     $('#popup-event-window').addClass('hide')
@@ -46,12 +57,18 @@ function Popupwindowevent() {
 
                   const post=(e)=>{
                     e.preventDefault()
+                    setsubloading(true)
                   
                     axios.post('/events/addevent', formdata, {
                       withCredentials: true
-                  }).then((res)=>{
+                  }).then(async(res)=>{
+                    await setsubloading(false)
+                    await $('#popup-profile-window').addClass('hide')
+                    await $('#app-main').removeClass('reduceopacity')
+                    await navigate('/')
+                    
                 
-                    window.open('/profile','_self')
+                    dispatch(countDecrease())
                 
                   }).catch((e)=>{
                 
@@ -60,7 +77,7 @@ function Popupwindowevent() {
                 
                   }
   return (
-          <form className='eventform'>
+          <form className={!subloading?'eventform':'eventform eventform-load'}>
           <i class='bx bx-x' onClick={close_event_popup}></i>
           <span className="text">Post Your Need and Services</span>
          
