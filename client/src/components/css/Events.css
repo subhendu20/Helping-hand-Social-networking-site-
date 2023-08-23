@@ -177,9 +177,10 @@
           border:none;
           
 }
-@media (max-width:500px) {
+@media (max-width:600px) {
           .event-main{
-                    height: 250px;
+                    min-height: auto!important;
+                    height: auto !important;
                     width: 80%;
           }
           .event-main.expand{

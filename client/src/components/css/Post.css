@@ -216,9 +216,10 @@
           
 }
 /* ----------------------------------------media query -----------------------------------------------*/
-@media (max-width:500px) {
+@media (max-width:600px) {
           .post-main{
-                    min-height: 250px!important;
+                    min-height: auto!important;
+                    height: auto !important;
                     width: 80%;
           }
           .post-main.expand{
