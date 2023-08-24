@@ -140,6 +140,11 @@ function Post({ post, type }) {
 
   }
 
+
+
+
+  
+
   const del_post =(id)=>{
     console.log(id)
     axios.delete(`/post/deletenote/${id}`,{
@@ -159,8 +164,14 @@ function Post({ post, type }) {
 
   }
 
+
+
+
+
+
+
   const open_del_warning=()=>{
-    $('.dropdown-float-post').toggleClass('none')
+    $(`#dropdown-${post._id}`).toggleClass('none')
 
   }
 
@@ -182,6 +193,11 @@ function Post({ post, type }) {
 
     }
   }, [location.pathname])
+
+
+
+
+
 
 
 
@@ -224,7 +240,7 @@ function Post({ post, type }) {
 
   return (
     <div className='post-main' id={`post-main${post._id}`} >
-      <span className="dropdown-float-post none">
+      <span className="dropdown-float-post none" id={`dropdown-${post._id}`}>
         <p className='text'>Want to delete?</p>
         <p onClick={()=>del_post(post._id)}>Delete</p>
         <i class='bx bx-x'onClick={open_del_warning}  ></i>

@@ -290,7 +290,7 @@ function App() {
               <img class='bx bxl-product-hunt' src={(profiledata.profileimg !== '') ? profiledata.profileimg : cover} alt='loading' onClick={open_dropdown} /><i class='bx bx-chevron-down' id='pointer' onClick={open_dropdown}></i>
               <div className="dropdown none" id='dropdown'>
                 <span><i class='bx bxl-product-hunt' ></i><a href="/profile">{profiledata.name.split(' ')[0]}</a></span>
-                <span className="profilebutton"><button>View profile</button></span>
+                
                 <hr />
                 <span className="setting"><a href="/settings">Setting</a></span>
                 <hr />

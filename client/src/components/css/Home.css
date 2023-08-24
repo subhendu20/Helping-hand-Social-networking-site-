@@ -21,12 +21,13 @@
 
 /* //change */
 .Home .profile-list{
-          width: 1600px;
+          width: 90%;
           margin: 20px auto;
           height: auto;
           overflow-x: scroll;
           display: flex;
           text-align: center;
+          flex-wrap: nowrap;
           
           
 }
@@ -42,6 +43,8 @@
           align-items: center;
           cursor: pointer;
           font-weight: 500;
+          background-color: rgb(201, 197, 197);
+          border-radius: 10px;
 }
 .Home .profile-list span p.name{
           font-size: 20px;
