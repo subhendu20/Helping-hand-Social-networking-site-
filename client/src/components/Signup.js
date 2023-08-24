@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './css/Signup.css'
 import Cookies from 'universal-cookie'
 import { useNavigate } from "react-router-dom";
@@ -84,9 +84,18 @@ function Signup() {
 
   }
 
+
+  useEffect(() => {
+    let vh = window.innerHeight * 0.01;
+  
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+  },[])
+
+
   return (
     <section className='signup'>
-      <img src={logo} alt="logo" className="logo" />
+      
       <section className='page-title'>Create account</section>
       
       <form className="form">

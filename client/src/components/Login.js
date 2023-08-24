@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './css/Login.css'
 import { useNavigate } from "react-router-dom";
 import Cookies from 'universal-cookie'
@@ -35,6 +35,14 @@ function Login() {
 
   }
 
+
+  useEffect(() => {
+    let vh = window.innerHeight * 0.01;
+  
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+  },[])
+
           const submit=async(e)=>{
             e.preventDefault()
             axios.post("/users/login", formdata, {
@@ -59,7 +67,7 @@ function Login() {
           }
   return (
     <section className='login'>
-      <img src={logo} alt="logo" className="logo" />
+      
       <section className='page-title'>Log into your account</section> 
        <form className="form">
        <div className="popup-warning-window hide" id='popup-warning-window'>
