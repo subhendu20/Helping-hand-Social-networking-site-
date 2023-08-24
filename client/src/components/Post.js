@@ -4,12 +4,18 @@ import $ from 'jquery'
 import "jquery-ui-dist/jquery-ui";
 import axios from 'axios'
 import postimg from './css/download (5).jpeg'
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { useDispatch } from 'react-redux';
+import { countDecrease } from '../action/update';
+import { countIncrease } from '../action/update';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'universal-cookie'
 
 function Post({ post, type }) {
   const navigate = useNavigate();
+  const countstate = useSelector((state) => state.changeCount)
+  const dispatch = useDispatch()
   const cookie = new Cookies()
   const [comments, setcomments] = useState({ comments: '' })
   const [loading, setloading] = useState(true)
@@ -30,10 +36,11 @@ function Post({ post, type }) {
     axios.post(`/comment/addcomment/${post._id}`, comments, {
       withCredentials: true
     }).then(async (res) => {
+      await $('#message_input').val('')
 
 
-      await setloading(false)
-      $('#message_input').val('')
+    setloading(false)
+      
       
 
 
@@ -133,6 +140,24 @@ function Post({ post, type }) {
 
   }
 
+  const del_post =(id)=>{
+    axios.delete(`/post/deletenote/${id}`,{
+      withCredentials: true
+    }).then(async (res) => {
+      if(res.data==='succsess'){
+        dispatch(countDecrease())
+      }
+
+
+      
+
+
+    }).catch((e) => {
+
+    })
+
+  }
+
   useEffect(() => {
 
     if (location.pathname === '/') {
@@ -187,15 +212,19 @@ function Post({ post, type }) {
 
   return (
     <div className='post-main' id={`post-main${post._id}`} >
-
-
-      <span className="profile" onClick={open_profile}> <p> {post.username}</p><i class='bx bx-dots-horizontal-rounded'></i>
-      <span className="dropdown">
-        <u>
+      <span id='float-post'>
+        <i class='bx bx-dots-horizontal-rounded'></i>
+        <span className="dropdown-float-post">
+        <ul>
           <li className='profile'>Visit profile</li>
-          {(post.user === localStorage.getItem('idu')) && <li className='delete'>Delete</li>}
-        </u>
+          {(post.user === localStorage.getItem('idu')) && <li className='delete' onClick={()=>del_post(post._id)}>Delete</li>}
+        </ul>
       </span>
+        </span>
+
+
+      <span className="profile" onClick={open_profile}> <p> {post.username}</p>
+      
       
       </span>
       <span className="topic">{post.topic}</span>

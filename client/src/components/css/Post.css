@@ -56,36 +56,47 @@
           
           color:rgb(48, 48, 133);
           cursor: pointer;
-          display: flex;
-          justify-content: space-between;
+          
 
 }
-.post-main span.profile span.dropdown{
+#float-post{
+          position: absolute;
+          top:0%;
+          right:0%;
+          padding: 10px;
+          z-index: 15;
+          font-size: 15px;
+          color:rgb(51, 50, 50);
+}
+#float-post .dropdown-float-post{
           position: absolute;
           top:100%;
           right:0%;
           z-index: 11;
-          width: 100px;
-          height: auto;
+          width: 150px;
+          height: 100px;
           background-color: rgb(221, 219, 219);
           border-radius: 5px;
+          z-index: 16;
           
 
 
 }
-.post-main span.profile span.dropdown ul{
+#float-post .dropdown-float-post ul{
           width: 100%;
           height: auto;
           display: flex;
           list-style-type: none;
           flex-direction: column;
+
 }
-.post-main span.profile span.dropdown ul li{
+#float-post .dropdown-float-post ul li{
           font-size: 10px;
           margin: 5px 0px;
+          text-decoration: none;
           color: black;
 }
-.post-main span.profile span.dropdown ul li.delete{
+#float-post .dropdown-float-post ul li.delete{
           color:red;
 }
 .post-main span.profile i{

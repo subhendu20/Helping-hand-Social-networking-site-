@@ -54,7 +54,7 @@ router.delete('/deletenote/:id',async(req,res)=>{
                     return res.send("you are logged out")
           }
           const del = await post.findByIdAndDelete(req.params.id)
-          res.send(del)
+          res.send('succsess')
 
 
 
