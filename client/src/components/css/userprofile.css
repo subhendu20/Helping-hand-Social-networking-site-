@@ -168,7 +168,7 @@
   display: none;
 }
 
-.user-profile .profile-details .about .aboutbox span.buttons span.edit {
+.user-profile .profile-details .about .aboutbox span.buttons button.edit {
   background:none;
   color:rgb(17, 150, 61);
   font-size: 15px !important;
@@ -349,7 +349,7 @@
     padding: 5px;
 
   }
-  .user-profile .profile-details .about .aboutbox span.buttons span.edit {
+  .user-profile .profile-details .about .aboutbox span.buttons button.edit {
     font-size: 10px !important;
   }
 
