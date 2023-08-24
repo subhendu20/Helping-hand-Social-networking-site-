@@ -577,9 +577,8 @@ img {
 /* -----------------------route------------------------------ */
 
 .App .content .route{
-  width:90%;
+  width:95%;
   height:100%;
-  overflow-x: hidden;
 }
 .route.route-expand{
   width:90%;
