@@ -19,15 +19,17 @@
 
 }
 
-/* //change */
+
 .Home .profile-list{
           width: 90%;
           margin: 20px auto;
           height: auto;
           overflow-x: scroll;
-          display: flex;
-          text-align: center;
-          flex-wrap: nowrap;
+          white-space: nowrap;
+         
+         
+          
+         
           
           
 }
