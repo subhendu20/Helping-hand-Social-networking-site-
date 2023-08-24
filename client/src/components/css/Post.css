@@ -62,7 +62,7 @@
 #float-post{
           position: absolute;
           top:0%;
-          right:0%;
+          left:90%;
           padding: 10px;
           z-index: 15;
           font-size: 15px;
@@ -95,6 +95,7 @@
           margin: 5px 0px;
           text-decoration: none;
           color: black;
+          cursor: pointer;
 }
 #float-post .dropdown-float-post ul li.delete{
           color:red;

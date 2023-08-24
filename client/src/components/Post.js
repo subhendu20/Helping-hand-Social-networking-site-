@@ -141,6 +141,7 @@ function Post({ post, type }) {
   }
 
   const del_post =(id)=>{
+    console.log(id)
     axios.delete(`/post/deletenote/${id}`,{
       withCredentials: true
     }).then(async (res) => {
@@ -217,7 +218,7 @@ function Post({ post, type }) {
         <span className="dropdown-float-post">
         <ul>
           <li className='profile'>Visit profile</li>
-          {(post.user === localStorage.getItem('idu')) && <li className='delete' onClick={()=>del_post(post._id)}>Delete</li>}
+          <li>{(post.user === localStorage.getItem('idu')) && <p className='delete' onClick={()=>del_post(post._id)}>Delete</p>}</li>
         </ul>
       </span>
         </span>
