@@ -142,9 +142,9 @@ const[eventlist,seteventlist]=useState({events:[]})
                              }
 
           </div>
-          <hr/>
-          <div className="divider">Organizations near you</div>
-          <div className="profile-list">
+          {/* <hr/>
+          <div className="divider">Organizations near you</div> */}
+          {/* <div className="profile-list">
                     {
           (areaprofiles.list.length!==0) && areaprofiles.list.map((e)=>{
             return <span key={e._id}><img src={(e.profileimg)?e.profileimg:cover} alt="loading" onClick={()=>navigate(`/userprofile/${e._id}`)}/> <p className='name'>{e.name}</p> <p id='area'>{e.area}</p></span>
@@ -153,7 +153,7 @@ const[eventlist,seteventlist]=useState({events:[]})
         }
 
 
-          </div>
+          </div> */}
           
           
          
