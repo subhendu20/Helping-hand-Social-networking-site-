@@ -206,13 +206,16 @@ function App() {
     axios.get('/users/getdetails', {
       withCredentials: true
     }).then(async (res) => {
+      
 
       var a = await res.data.name.split(' ')
-      setprofiledata({
+      await setprofiledata({
         name: a[0],
 
         profileimg: res.data.profileimg,
+        
       })
+      localStorage.setItem('idu',res.data._id)
 
 
     }).catch((e) => {

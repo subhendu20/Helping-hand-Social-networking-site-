@@ -169,8 +169,8 @@
 }
 
 .user-profile .profile-details .about .aboutbox span.buttons span.edit {
-  background-color: rgb(17, 150, 61);
-  color: white;
+  background:none;
+  color:rgb(17, 150, 61);
   font-size: 15px !important;
 }
 

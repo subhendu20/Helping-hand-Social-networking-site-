@@ -56,7 +56,44 @@
           
           color:rgb(48, 48, 133);
           cursor: pointer;
+          display: flex;
+          justify-content: space-between;
 
+}
+.post-main span.profile span.dropdown{
+          position: absolute;
+          top:100%;
+          right:0%;
+          z-index: 11;
+          width: 100px;
+          height: auto;
+          background-color: rgb(221, 219, 219);
+          border-radius: 5px;
+          
+
+
+}
+.post-main span.profile span.dropdown ul{
+          width: 100%;
+          height: auto;
+          display: flex;
+          list-style-type: none;
+          flex-direction: column;
+}
+.post-main span.profile span.dropdown ul li{
+          font-size: 10px;
+          margin: 5px 0px;
+          color: black;
+}
+.post-main span.profile span.dropdown ul li.delete{
+          color:red;
+}
+.post-main span.profile i{
+          font-size: 2rem;
+          transition: 0.2s;
+}
+.post-main span.profile i:hover{
+          transform: scale(1.1);
 }
 .post-main span.buttons0{
           

@@ -6,9 +6,11 @@ import axios from 'axios'
 import postimg from './css/download (5).jpeg'
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'universal-cookie'
 
 function Post({ post, type }) {
   const navigate = useNavigate();
+  const cookie = new Cookies()
   const [comments, setcomments] = useState({ comments: '' })
   const [loading, setloading] = useState(true)
   const [commentlist, setcommentlist] = useState({ list: [] })
@@ -17,6 +19,10 @@ function Post({ post, type }) {
 
   const location = useLocation();
 
+
+
+
+  
   const submitcomment = async (e) => {
     e.preventDefault()
     
@@ -40,6 +46,10 @@ function Post({ post, type }) {
 
 
   }
+
+
+
+
   const opencomments = () => {
 
     $(`#post-main${post._id}`).toggleClass('br-change')
@@ -49,14 +59,25 @@ function Post({ post, type }) {
 
   }
 
+
+
+
+
   const change = (e) => {
     setcomments({ [e.target.name]: e.target.value })
   }
+
+
+
+
 
   const open_profile = () => {
     navigate(`/userprofile/${post.user}`)
 
   }
+
+
+
 
   const getdays = (d) => {
     const now = Date.now()
@@ -168,7 +189,15 @@ function Post({ post, type }) {
     <div className='post-main' id={`post-main${post._id}`} >
 
 
-      <span className="profile" onClick={open_profile}>{post.username}</span>
+      <span className="profile" onClick={open_profile}> <p> {post.username}</p><i class='bx bx-dots-horizontal-rounded'></i>
+      <span className="dropdown">
+        <u>
+          <li className='profile'>Visit profile</li>
+          {(post.user === localStorage.getItem('idu')) && <li className='delete'>Delete</li>}
+        </u>
+      </span>
+      
+      </span>
       <span className="topic">{post.topic}</span>
       <span className="img">{post.description}</span>
       <span className='small'>{`${post.area}`}</span>
