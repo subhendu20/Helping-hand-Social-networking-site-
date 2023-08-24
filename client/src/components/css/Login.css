@@ -148,7 +148,7 @@
         .popup-warning-window.hide{
           display: none;
         }
-@media (max-width:500px) {
+@media (max-width:600px) {
   .login{
     background-image: url('./background\(1\)-hh-responsive.jpg');
   }

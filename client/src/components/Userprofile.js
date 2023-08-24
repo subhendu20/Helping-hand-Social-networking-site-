@@ -8,7 +8,7 @@ import "jquery-ui-dist/jquery-ui";
 import { useParams } from 'react-router-dom';
 import './css/userprofile.css'
 import { useNavigate } from 'react-router-dom';
-import gif from './css/3WyW.gif';
+import gif from './css/Infinity-1s-200px.svg';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { useDispatch } from 'react-redux';
 

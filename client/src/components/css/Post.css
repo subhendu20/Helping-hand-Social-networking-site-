@@ -77,7 +77,8 @@
           top:50%;
           right:0%;
           z-index: 11;
-          width: 60%;
+          left: 10%;
+          right: 10%;
           height: 100px;
           display: flex;
           flex-direction: row;
@@ -292,7 +293,7 @@
           
 }
 /* ----------------------------------------media query -----------------------------------------------*/
-@media (max-width:600px) {
+@media (max-width:800px) {
           .post-main{
                     min-height: auto!important;
                     height: auto !important;

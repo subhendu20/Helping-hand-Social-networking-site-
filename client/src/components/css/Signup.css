@@ -139,7 +139,7 @@
         }
 
 
-@media (max-width:500px) {
+@media (max-width:800px) {
   .signup{
     background-image: url('./background\(1\)-hh-responsive.jpg');
   }
