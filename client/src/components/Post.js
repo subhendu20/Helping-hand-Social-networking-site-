@@ -159,6 +159,17 @@ function Post({ post, type }) {
 
   }
 
+  const open_del_warning=()=>{
+    $('.dropdown-float-post').toggleClass('none')
+
+  }
+
+
+
+
+
+
+
   useEffect(() => {
 
     if (location.pathname === '/') {
@@ -213,15 +224,13 @@ function Post({ post, type }) {
 
   return (
     <div className='post-main' id={`post-main${post._id}`} >
-      <span id='float-post'>
-        <i class='bx bx-dots-horizontal-rounded'></i>
-        <span className="dropdown-float-post">
-        <ul>
-          <li className='profile'>Visit profile</li>
-          <li>{(post.user === localStorage.getItem('idu')) && <p className='delete' onClick={()=>del_post(post._id)}>Delete</p>}</li>
-        </ul>
+      <span className="dropdown-float-post none">
+        <p className='text'>Want to delete?</p>
+        <p onClick={()=>del_post(post._id)}>Delete</p>
+        <i class='bx bx-x'onClick={open_del_warning}  ></i>
+        
       </span>
-        </span>
+      {(post.user === localStorage.getItem('idu')) && <span id='float-post' ><i class='bx bx-message-square-x' onClick={open_del_warning} ></i></span>}
 
 
       <span className="profile" onClick={open_profile}> <p> {post.username}</p>
