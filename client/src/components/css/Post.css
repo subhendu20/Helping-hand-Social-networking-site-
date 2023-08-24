@@ -75,7 +75,7 @@
 .dropdown-float-post{
           position: absolute;
           top:50%;
-          right:10%;
+          left:10%;
           z-index: 11;
           width: 80%;
           height: 100px;
@@ -86,7 +86,7 @@
           z-index: 16;
           justify-content: center;
           align-items: center;
-          padding: 10px;
+          padding:5px;
           
 
 
@@ -100,15 +100,24 @@
           font-size: 15px;
           color:rgb(207, 22, 22);
           margin: 0px 5px;
+          cursor: pointer;
+          transition: 0.2s;
 
+}
+.dropdown-float-post p:hover{
+          transform: scale(1.1);
 }
 .dropdown-float-post i{
           font-size: 20px;
           color:rgb(7, 7, 7);
           margin: 0px 5px;
+          transition: 0.2s;
 
 }
-.dropdown-float-pos.none{
+.dropdown-float-post i:hover{
+          transform: scale(1.1);
+}
+.dropdown-float-post.none{
           display: none;
 
 }
