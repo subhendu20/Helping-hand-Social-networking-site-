@@ -36,7 +36,7 @@ function Post({ post, type }) {
     axios.post(`/comment/addcomment/${post._id}`, comments, {
       withCredentials: true
     }).then(async (res) => {
-      await $('#message_input').val('')
+      await $(`#input-${post._id}`).val('')
 
 
     setloading(false)
@@ -280,7 +280,7 @@ function Post({ post, type }) {
 
         </div>
         <form action="" className="commentform">
-          <input type="text" name='comments' placeholder='Write comment' onChange={change} id='message_input' />
+          <input type="text" name='comments' placeholder='Write comment' onChange={change} id={`input-${post._id}`} />
           <button className="submitcomment" onClick={submitcomment}><i class='bx bx-send'></i></button>
 
         </form>
