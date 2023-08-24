@@ -45,9 +45,15 @@
           font-weight: 500;
           background-color: rgb(201, 197, 197);
           border-radius: 10px;
+          padding: 10px;
+          transition: 0.2s;
+}
+.Home .profile-list span:hover{
+          background-color: rgb(219, 217, 217);
+
 }
 .Home .profile-list span p.name{
-          font-size: 20px;
+          font-size: 15rem;
           color: rgb(5, 53, 33);
 }
 .Home .profile-list span img{
@@ -93,6 +99,7 @@
           }
           .Home .profile-list span{
                     margin: 0px 10px;
+                    border-radius: 5px;
           }
           .Home .profile-list span img{
                     width: 50px;
