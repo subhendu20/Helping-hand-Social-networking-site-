@@ -232,7 +232,7 @@ function App() {
         <div className="App" id='app-main'>
 
           {/*---------------------------------------------- nav -------------------------------------------------*/}
-          <header>
+          <header id='app-header'>
           <nav className="nav">
             <span className="logo"><a href='/'>HHand</a></span>
             <span className="search"><form><input type="text" placeholder='search' name='query' onChange={changequery} autoComplete='false' /><button><i class='bx bx-search-alt-2' onClick={submit_query}></i></button></form></span>
