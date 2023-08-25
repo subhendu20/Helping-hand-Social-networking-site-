@@ -16,8 +16,8 @@
           border-radius: 50%;
           border:10px solid rgb(28, 6, 104);
           position:absolute;
-          top:20%;
-          left:15%;
+          top:25%;
+          left:10%;
 }
 .profile .banner{
           width:100%;
@@ -185,6 +185,8 @@
           padding:10px;
           overflow-y: auto;
           position: relative;
+          overflow-x: hidden;
+          
           
           
 

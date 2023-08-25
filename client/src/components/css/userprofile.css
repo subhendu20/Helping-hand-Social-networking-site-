@@ -13,8 +13,8 @@
   border-radius: 50%;
   border: 10px solid rgb(5, 53, 33);
   position: absolute;
-  top: 30%;
-  left: 15%;
+  top: 25%;
+  left: 10%;
 }
 
 .user-profile .banner {
@@ -303,7 +303,7 @@
     width: 100%;
     height: 15%;
     margin: 0px;
-
+   
   }
 
   .user-profile .profile-details {

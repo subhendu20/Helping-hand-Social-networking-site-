@@ -59,7 +59,7 @@ function App() {
 
   const collapse_sidebar = async () => {
 
-    $('#route').toggleClass('route-expand')
+    // $('#route').toggleClass('route-expand')
 
 
 

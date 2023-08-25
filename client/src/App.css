@@ -425,7 +425,7 @@ p {
 
 
 .sidebar.reduce {
-  width: 5%;
+  width: auto;
 }
 
 .span-center{
@@ -577,12 +577,13 @@ img {
 /* -----------------------route------------------------------ */
 
 .App .content .route{
-  width:95%;
+  width:auto;
+  flex: 1;
   height:100%;
 }
-.route.route-expand{
+/* .route.route-expand{
   width:90%;
-}
+} */
 
 
 
