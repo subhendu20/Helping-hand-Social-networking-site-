@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import './css/Post.css'
 import $ from 'jquery'
 import "jquery-ui-dist/jquery-ui";
@@ -20,6 +20,13 @@ function Post({ post, type }) {
   const [comments, setcomments] = useState({ comments: '' })
   const [loading, setloading] = useState(true)
   const [commentlist, setcommentlist] = useState({ list: [] })
+
+
+  const messagesEndRef = useRef(null)
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "auto"})
+  }
 
 
 
@@ -57,10 +64,13 @@ function Post({ post, type }) {
 
 
 
-  const opencomments = () => {
+  const opencomments = async() => {
 
-    $(`#post-main${post._id}`).toggleClass('br-change')
-    $(`#${post._id}`).toggleClass('none').toggleClass('flex')
+    await $(`#post-main${post._id}`).toggleClass('br-change')
+    await $(`#${post._id}`).toggleClass('none').toggleClass('flex')
+
+
+    scrollToBottom()
 
 
 
@@ -153,11 +163,6 @@ function Post({ post, type }) {
       if(res.data==='succsess'){
         dispatch(countDecrease())
       }
-
-
-      
-
-
     }).catch((e) => {
 
     })
@@ -275,6 +280,9 @@ function Post({ post, type }) {
 
             })
           }
+
+
+          <div ref={messagesEndRef} />
 
 
 
