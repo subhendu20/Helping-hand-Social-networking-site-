@@ -326,7 +326,7 @@
   font-weight: 200;
 
   position: relative;
-  z-index:30;
+  z-index:35;
  
   
   /* will be removed during development */
@@ -482,7 +482,7 @@ p {
 .sidebar .icons2 li:hover i {
   color: white;
 }
-.sidebar .icons2 li:hover a{
+.sidebar .icons2 li:hover a p{
   color: white;
 }
 

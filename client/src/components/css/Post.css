@@ -59,7 +59,7 @@
 #float-post{
           position: absolute;
           top:0%;
-          left:90%;
+          right:5%;
           padding: 10px;
           z-index: 15;
           font-size: 20px;

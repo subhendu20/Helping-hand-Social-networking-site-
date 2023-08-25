@@ -28,7 +28,7 @@ import gif from './components/css/Infinity-1s-200px.svg'
 
 function App() {
   const logstate = useSelector((state) => state.changeStatus)
-  
+
   const dispatch = useDispatch()
 
 
@@ -37,13 +37,13 @@ function App() {
   const navigate = useNavigate();
   const cookie = new Cookies()
   const [searchmessage, setsearchmessage] = useState({ query: '' })
-  
+
 
   const [loading, setloading] = useState(false)
   const [profiledata, setprofiledata] = useState({ name: '', profileimg: '' })
 
   const [followloading, setfollowloading] = useState(false)
-  
+
   const [followerlist, setfollowerlist] = useState({ followers: [] })
 
   const open_dropdown = () => {
@@ -55,66 +55,16 @@ function App() {
     setsearchmessage({ ...searchmessage, [e.target.name]: e.target.value })
   }
 
- 
+
 
   const collapse_sidebar = async () => {
 
-    // $('#route').toggleClass('route-expand')
-
-
-
-
-
-    document.querySelector('#menubtn').classList.toggle('icon-center')
-
-
-    const x = await document.querySelectorAll(".center-a");
-
-    for (let i = 0; i < x.length; i++) {
-
-      document.querySelectorAll(".center-a")[i].classList.toggle("center-span");
-
-    }
-
-
-
-
-
-    const a = await document.querySelectorAll(".side-a");
-
-    for (let i = 0; i < a.length; i++) {
-
-      document.querySelectorAll(".side-a")[i].classList.toggle("col");
-
-    }
-    const b = await document.querySelectorAll("img");
-
-    for (let i = 0; i < b.length; i++) {
-
-      document.querySelectorAll("img")[i].classList.toggle("col");
-
-    }
-    const c = await document.querySelectorAll(".sidebar");
-
-    for (let i = 0; i < c.length; i++) {
-
-      document.querySelectorAll(".sidebar")[i].classList.toggle("reduce");
-
-    }
-    const d = await document.querySelectorAll(".bx-broadcast");
-
-    for (let i = 0; i < d.length; i++) {
-
-      document.querySelectorAll(".bx-broadcast")[i].classList.toggle("col");
-
-    }
-    const e = await document.querySelectorAll(".side-span");
-
-    for (let i = 0; i < e.length; i++) {
-
-      document.querySelectorAll(".side-span")[i].classList.toggle("span-center");
-
-    }
+    $('#menubtn').toggleClass('icon-center')
+    $('.center-a').toggleClass('center-span')
+    $('.side-a').toggleClass('col')
+    $('.sidebar').toggleClass('reduce')
+    $('.bx-broadcast').toggleClass('col')
+    $('.side-span').toggleClass('span-center')
   }
 
 
@@ -162,7 +112,7 @@ function App() {
 
 
 
-  
+
 
 
 
@@ -176,10 +126,10 @@ function App() {
 
   useEffect(() => {
     let vh = window.innerHeight * 0.01;
-  
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-  },[])
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+  }, [])
 
 
 
@@ -206,16 +156,16 @@ function App() {
     axios.get('/users/getdetails', {
       withCredentials: true
     }).then(async (res) => {
-      
+
 
       var a = await res.data.name.split(' ')
       await setprofiledata({
         name: a[0],
 
         profileimg: res.data.profileimg,
-        
+
       })
-      localStorage.setItem('idu',res.data._id)
+      localStorage.setItem('idu', res.data._id)
 
 
     }).catch((e) => {
@@ -231,8 +181,8 @@ function App() {
 
 
   useEffect(() => {
-    
-    if(cookie.get('logtoken')!==undefined){
+
+    if (cookie.get('logtoken') !== undefined) {
       axios.get(`/comment/getfollows`, {
         withCredentials: true
       }).then(async (res) => {
@@ -240,13 +190,13 @@ function App() {
           followers: res.data
         })
       }).catch((e) => {
-  
-  
+
+
       })
 
     }
-    
-  
+
+
 
 
   }, [logstate])
@@ -282,6 +232,7 @@ function App() {
         <div className="App" id='app-main'>
 
           {/*---------------------------------------------- nav -------------------------------------------------*/}
+          <header>
           <nav className="nav">
             <span className="logo"><a href='/'>HHand</a></span>
             <span className="search"><form><input type="text" placeholder='search' name='query' onChange={changequery} autoComplete='false' /><button><i class='bx bx-search-alt-2' onClick={submit_query}></i></button></form></span>
@@ -290,7 +241,7 @@ function App() {
               <img class='bx bxl-product-hunt' src={(profiledata.profileimg !== '') ? profiledata.profileimg : cover} alt='loading' onClick={open_dropdown} /><i class='bx bx-chevron-down' id='pointer' onClick={open_dropdown}></i>
               <div className="dropdown none" id='dropdown'>
                 <span><i class='bx bxl-product-hunt' ></i><a href="/profile">{profiledata.name.split(' ')[0]}</a></span>
-                
+
                 <hr />
                 <span className="setting"><a href="/settings">Setting</a></span>
                 <hr />
@@ -303,65 +254,67 @@ function App() {
 
           </nav>
 
+          </header>
+
           <section className="content">
             {/*------------------------------------------------------ sidebar -----------------------------------------------*/}
             <aside class="sidebar reduce">
-              
-                <ul class="buttons">
-                  <li className='side-span' id='menubtn'><i class='bx bx-menu' onClick={collapse_sidebar}></i></li>
-                </ul>
-                <ul class="icons">
-                  <li className='side-span'><a href="/" className='center-a'> <i class='bx bx-home'></i>
-                    <p className='side-a col'>Home</p></a>
-                  </li>
-                  <li className='side-span'> <a href='/profile' className='center-a'> <i class='bx bxl-product-hunt'></i>
-                    <p className='side-a col'>{profiledata.name}</p></a>
-                  </li>
-                  <li className='side-span'> <a href='/settings' className='center-a'> <i class='bx bxs-cog' ></i>
-                    <p className='side-a col' >Settings</p></a>
-                  </li>
-                  <li className='side-span'> <a href='/info' className='center-a'> <i class='bx bxs-info-circle'></i>
-                    <p className='side-a col' >Info</p></a>
-                  </li>
 
-                  <hr className='sidebar-hr' />
+              <ul class="buttons">
+                <li className='side-span' id='menubtn'><i class='bx bx-menu' onClick={collapse_sidebar}></i></li>
+              </ul>
+              <ul class="icons">
+                <li className='side-span'><a href="/" className='center-a'> <i class='bx bx-home'></i>
+                  <p className='side-a col'>Home</p></a>
+                </li>
+                <li className='side-span'> <a href='/profile' className='center-a'> <i class='bx bxl-product-hunt'></i>
+                  <p className='side-a col'>{profiledata.name}</p></a>
+                </li>
+                <li className='side-span'> <a href='/settings' className='center-a'> <i class='bx bxs-cog' ></i>
+                  <p className='side-a col' >Settings</p></a>
+                </li>
+                <li className='side-span'> <a href='/info' className='center-a'> <i class='bx bxs-info-circle'></i>
+                  <p className='side-a col' >Info</p></a>
+                </li>
 
-
-
-                </ul>
-                
-                <ul class="icons2">
-
-                  {
-                    (followerlist.followers.length !== 0) && followerlist.followers.map((e) => {
-                      return <li className='side-span' key={e._id}><a href={`/userprofile/${e.followid}`} className='center-a'> <img src={(e.followimg !== '') ? e.followimg : cover} alt="loading" />
-                        <p className='side-a col'>{e.followname.split(' ')[0]}</p></a>
-                      </li>
-                    })
-                  }
-
-                </ul>
+                <hr className='sidebar-hr' />
 
 
-              
+
+              </ul>
+
+              <ul class="icons2">
+
+                {
+                  (followerlist.followers.length !== 0) && followerlist.followers.map((e) => {
+                    return <li className='side-span' key={e._id}><a href={`/userprofile/${e.followid}`} className='center-a'> <img src={(e.followimg !== '') ? e.followimg : cover} alt="loading" />
+                      <p className='side-a col'>{e.followname.split(' ')[0]}</p></a>
+                    </li>
+                  })
+                }
+
+              </ul>
+
+
+
 
 
 
             </aside>
 
             {/* ------------------------------------------------content ----------------------------------------*/}
-           {(profiledata.name!=='') ?<section className="route" id='route'>
+            {(profiledata.name !== '') ? <main className="route" id='route'>
               <Routes>
                 <Route path='/profile' element={<Profile />} />
                 <Route path='/' element={<Home />} />
                 <Route path='/editprofile' element={<Editprofile />} />
                 <Route path='/settings' element={<Setting />} />
-                <Route path='/info' element={<Info/>} />
+                <Route path='/info' element={<Info />} />
                 <Route path='/userprofile/:userId' element={<Userprofile />} />
                 <Route path='/queryresult/:query' element={<Searchpage />} />
               </Routes>
 
-            </section>:<img src={gif} className='loading' alt='loading'/>}
+            </main> : <img src={gif} className='loading' alt='loading' />}
 
 
           </section>
