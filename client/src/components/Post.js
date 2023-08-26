@@ -254,7 +254,7 @@ function Post({ post, type }) {
       {(post.user === localStorage.getItem('idu')) && <span id='float-post' ><i class='bx bx-message-square-x' onClick={open_del_warning} ></i></span>}
 
 
-      <span className="profile" onClick={open_profile}> <p> {post.username}</p>
+      <span className="profile" onClick={open_profile}> <img src={post.userimg} alt="profile" />   <p> {post.username}</p>
       
       
       </span>
