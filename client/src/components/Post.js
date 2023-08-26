@@ -25,7 +25,7 @@ function Post({ post, type }) {
   const messagesEndRef = useRef(null)
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "auto"})
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth"})
   }
 
 

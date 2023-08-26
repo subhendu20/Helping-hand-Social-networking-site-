@@ -51,9 +51,35 @@
           margin:0px;
          
 }
+@media (max-width: 1200px){
+          .Home .posts-prefered-city{
+                    grid-template-columns:1fr 1fr 1fr 1fr;
+                   
 
+          }
+          .Home .eventlist{
+                    grid-template-columns:1fr 1fr 1fr 1fr;
+                    
+
+          }
+
+}
+@media (max-width: 800px){
+          .Home .posts-prefered-city{
+                    grid-template-columns:1fr 1fr 1fr;
+                   
+
+          }
+          .Home .eventlist{
+                    grid-template-columns:1fr 1fr 1fr;
+                    
+
+          }
+
+}
 
 @media (max-width:600px) {
+          
           
           
           .Home .posts-prefered-city{
