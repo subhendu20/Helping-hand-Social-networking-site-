@@ -584,6 +584,8 @@ img {
   width:auto;
   flex: 1;
   height:100%;
+  position: relative;
+  z-index: 12;
 }
 /* .route.route-expand{
   width:90%;
