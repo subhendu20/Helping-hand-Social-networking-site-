@@ -1,6 +1,6 @@
 
 import './App.css';
-import { Router, Routes, Route } from "react-router-dom"
+import { Router, Routes, Route, Link } from "react-router-dom"
 import Profile from './components/Profile';
 import Home from './components/Home';
 import { useEffect, useState } from 'react';
@@ -249,18 +249,18 @@ function App() {
           {/*---------------------------------------------- nav -------------------------------------------------*/}
           <header id='app-header'>
           <nav className="nav">
-            <span className="logo"><a href='/'>HHand</a></span>
+            <span className="logo"><Link to='/'>HHand</Link></span>
             <span className="search"><form><input type="text" placeholder='search' name='query' onChange={changequery} autoComplete='false' /><button><i class='bx bx-search-alt-2' onClick={submit_query}></i></button></form></span>
             <span className="menu">
 
               <img class='bx bxl-product-hunt' src={(profiledata.profileimg !== '') ? profiledata.profileimg : cover} alt='loading' onClick={open_dropdown} /><i class='bx bx-chevron-down' id='pointer' onClick={open_dropdown}></i>
               <div className="dropdown none" id='dropdown'>
-                <span><i class='bx bxl-product-hunt' ></i><a href="/profile">{profiledata.name.split(' ')[0]}</a></span>
+                <span><i class='bx bxl-product-hunt' ></i><Link to="/profile">{profiledata.name.split(' ')[0]}</Link></span>
 
                 <hr />
-                <span className="setting"><a href="/settings">Setting</a></span>
+                <span className="setting"><Link to="/settings">Setting</Link></span>
                 <hr />
-                <span className="Edit"><a href="/editprofile">Edit profile</a></span>
+                <span className="Edit"><Link to="/editprofile">Edit profile</Link></span>
                 <hr />
                 <span className="signout" onClick={display_signout}>Sign out</span>
 
@@ -279,17 +279,17 @@ function App() {
                 <li className='side-span' id='menubtn'><i class='bx bx-menu' onClick={collapse_sidebar}></i></li>
               </ul>
               <ul class="icons">
-                <li className='side-span'><a href="/" className='center-a'> <i class='bx bx-home'></i>
-                  <p className='side-a col'>Home</p></a>
+                <li className='side-span'><Link to="/" className='center-a'> <i class='bx bx-home'></i>
+                  <p className='side-a col'>Home</p></Link>
                 </li>
-                <li className='side-span'> <a href='/profile' className='center-a'> <i class='bx bxl-product-hunt'></i>
-                  <p className='side-a col'>{profiledata.name}</p></a>
+                <li className='side-span'> <Link to='/profile' className='center-a'> <i class='bx bxl-product-hunt'></i>
+                  <p className='side-a col'>{profiledata.name}</p></Link>
                 </li>
-                <li className='side-span'> <a href='/settings' className='center-a'> <i class='bx bxs-cog' ></i>
-                  <p className='side-a col' >Settings</p></a>
+                <li className='side-span'> <Link to='/settings' className='center-a'> <i class='bx bxs-cog' ></i>
+                  <p className='side-a col' >Settings</p></Link>
                 </li>
-                <li className='side-span'> <a href='/info' className='center-a'> <i class='bx bxs-info-circle'></i>
-                  <p className='side-a col' >Info</p></a>
+                <li className='side-span'> <Link to='/info' className='center-a'> <i class='bx bxs-info-circle'></i>
+                  <p className='side-a col' >Info</p></Link>
                 </li>
 
                 <hr className='sidebar-hr' />
@@ -302,8 +302,8 @@ function App() {
 
                 {
                   (followerlist.followers.length !== 0) && followerlist.followers.map((e) => {
-                    return <li className='side-span' key={e._id}><a href={`/userprofile/${e.followid}`} className='center-a'> <img src={(e.followimg !== '') ? e.followimg : cover} alt="loading" />
-                      <p className='side-a col'>{e.followname.split(' ')[0]}</p></a>
+                    return <li className='side-span' key={e._id}><Link to={`/userprofile/${e.followid}`} className='center-a'> <img src={(e.followimg !== '') ? e.followimg : cover} alt="loading" />
+                      <p className='side-a col'>{e.followname.split(' ')[0]}</p></Link>
                     </li>
                   })
                 }

@@ -5,7 +5,7 @@ import $ from 'jquery'
 import "jquery-ui-dist/jquery-ui";
 import defaultimg from './css/abstract-luxury-blur-grey-color-gradient-used-as-background-studio-wall-display-your-products.jpg'
 import Post from './Post';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import gif from './css/Infinity-1s-200px.svg'
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { useDispatch } from 'react-redux';
@@ -176,7 +176,7 @@ function Profile() {
                   }</div>
 
               </span>
-              <button className="edit"><a href="/editprofile"><i class='bx bx-edit' ></i>Edit Profile</a>
+              <button className="edit"><Link to="/editprofile"><i class='bx bx-edit' ></i>Edit Profile</Link>
               </button>
 
 

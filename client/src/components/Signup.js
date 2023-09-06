@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './css/Signup.css'
 import Cookies from 'universal-cookie'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from './css/h-letter-36999.png'
 
 import axios from 'axios'
@@ -129,7 +129,7 @@ function Signup() {
         <span><label htmlFor="password">Password</label><input type="password" name="password" onChange={change} required placeholder='Enter a password' /> </span>
         <span><label htmlFor="confirmpassword">Confirm password</label><input type="password" name="confirmpassword" onChange={change} required placeholder='Re-enter password'/> </span>
         <span className='button'><button onClick={handlesubmit}>Sign Up</button></span>
-        <span className='message'>Have an Account <a href="/">Log In</a></span>
+        <span className='message'>Have an Account <Link to="/">Log In</Link></span>
 
 
       </form>
