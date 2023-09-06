@@ -93,7 +93,7 @@ function Userprofile() {
                     
 
 
-          }, [followloading])
+          }, [followloading,userId])
 
 
 
@@ -122,7 +122,7 @@ function Userprofile() {
                     })
                     setfollowloading(false)
 
-          }, [followloading])
+          }, [followloading,userId])
 
 
 
@@ -172,7 +172,7 @@ function Userprofile() {
 
 
 
-          }, [loading])
+          }, [loading,userId])
 
           //get post list
           useEffect(() => {
@@ -216,7 +216,7 @@ function Userprofile() {
 
 
 
-          }, [postloading,countstate])
+          }, [postloading,countstate,userId])
 
 
 

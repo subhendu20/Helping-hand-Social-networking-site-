@@ -52,6 +52,7 @@ function App() {
   }
 
   const changequery = (e) => {
+    
     setsearchmessage({ ...searchmessage, [e.target.name]: e.target.value })
   }
 
@@ -250,7 +251,7 @@ function App() {
           <header id='app-header'>
           <nav className="nav">
             <span className="logo"><Link to='/'>HHand</Link></span>
-            <span className="search"><form><input type="text" placeholder='search' name='query' onChange={changequery} autoComplete='false' /><button><i class='bx bx-search-alt-2' onClick={submit_query}></i></button></form></span>
+            <span className="search"><form><input type="text" placeholder='search' name='query' onChange={changequery} autoComplete='false' /><button type='submit'><i class='bx bx-search-alt-2' onClick={submit_query}></i></button></form></span>
             <span className="menu">
 
               <img class='bx bxl-product-hunt' src={(profiledata.profileimg !== '') ? profiledata.profileimg : cover} alt='loading' onClick={open_dropdown} /><i class='bx bx-chevron-down' id='pointer' onClick={open_dropdown}></i>
