@@ -2,9 +2,15 @@ import React, { useEffect, useState } from 'react'
 import './css/editprofile.css'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import cover from './css/abstract-luxury-blur-grey-color-gradient-used-as-background-studio-wall-display-your-products.jpg'
+
+import cover from './css/abstract-luxury-blur-grey-color-gradient-used-as-background-studio-wall-display-your-products.jpg';
+import { countIncrease } from '../action/update';
+import { useDispatch } from 'react-redux';
 
 function Editprofile() {
+  const dispatch = useDispatch()
+
+
           const [loading,setloading]=useState(false)
   const[prevalue,setprevalue]=useState({
     name:'',
@@ -73,8 +79,9 @@ function Editprofile() {
             alert('Inavalid entry')
           }
           else{
+            dispatch(countIncrease())
             
-            window.open('/','_self')
+            navigate('/profile')
 
           }
          
