@@ -70,8 +70,8 @@
 
 }
 .post-main span.profile img{
-          width: 50px;
-          height: 50px;
+          width: 40px;
+          height: 40px;
           border-radius: 50%;
           
 }
@@ -327,8 +327,8 @@
                     font-size: 10px;
           }
           .post-main span.profile img{
-                    width: 40px;
-                    height: 40px;
+                    width: 30px;
+                    height: 30px;
           }
 
           
