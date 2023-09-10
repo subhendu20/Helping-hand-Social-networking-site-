@@ -87,25 +87,18 @@ function Signup() {
 
   useEffect(() => {
     let vh = window.innerHeight * 0.01;
-  
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-  
-    window.addEventListener('orientationchange', function () {
-      vh = window.innerHeight * 0.01;
-  
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    
-    })
-    return () => {
-      window.removeEventListener('orientationchange', function () {
-        vh = window.innerHeight * 0.01;
-    
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-      
-      });
-  }
 
-  },[])
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+
+    window.addEventListener('resize', function () {
+      if (window.innerHeight > 600) {
+        vh = window.innerHeight * 0.01;
+
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      }
+    })
+  }, [])
 
 
   return (
