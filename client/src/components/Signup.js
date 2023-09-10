@@ -106,10 +106,10 @@ function Signup() {
       
       <section className='page-title'>Create account</section>
       
-      <form className="form" onChange={handlesubmit}>
+      <form className="form" onSubmit={handlesubmit}>
       <div className="popup-warning-signup-window hide" id='popup-warning-signup-window'>
         <p>{error}</p>
-        <i class='bx bx-x' onClick={close_invalid_format}></i>
+        <i className='bx bx-x' onClick={close_invalid_format}></i>
         
         </div>
 

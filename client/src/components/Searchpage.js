@@ -18,7 +18,13 @@ function Searchpage() {
 
 
           useEffect(() => {
+                    setdetails({
+                              postlist: [],
+                              profilelist: []
+
+                    })
                     setloading(true)
+                   
 
                     axios.post('/post/findpost', { query }, {
                               withCredentials: true
@@ -51,79 +57,79 @@ function Searchpage() {
                     <React.Fragment>
 
                               {/*------------------ if there are some result------------------ */}
-                    {(details.postlist.length !== 0 || details.profilelist.length !== 0) &&
-                    <div className='searchresult'>
-                              <div className="posts-search">
-                                        <span className="title">
-                                                  Posts
+                              {(details.postlist.length !== 0 || details.profilelist.length !== 0) &&
+                                        <div className='searchresult'>
+                                                  <div className="posts-search">
+                                                            <span className="title">
+                                                                      Posts
 
-                                        </span>
-                                        <hr />
-                                        <span className="postlist">
+                                                            </span>
+                                                            <hr />
+                                                            <span className="postlist">
 
-                                                  {
-                                                            (details.postlist.length !== 0) && details.postlist.map((e) => {
-
-
-                                                                      return e.map((x) => {
-
-                                                                                return <Post post={x} />
+                                                                      {
+                                                                                (details.postlist.length !== 0) && details.postlist.map((e) => {
 
 
-                                                                      })
+                                                                                          return e.map((x) => {
 
-                                                            })
-                                                  }
-
-
-                                        </span>
-
-                              </div>
-                              <div className="creator-search" >
-                                        <span className="title">
-                                                  Profiles
-                                        </span>
-
-                                        <span className="profilelist">
-                                                  {
-                                                            (details.profilelist.length !== 0) && details.profilelist.map((e) => {
+                                                                                                    return <Post post={x} />
 
 
-                                                                      return e.map((x) => {
+                                                                                          })
 
-                                                                                return <span key={x._id} onClick={() => navigate(`/userprofile/${x._id}`)}>
-                                                                                          <img src={(x.profileimg !== '') ? x.profileimg : defaultimg} alt="loading" />
-                                                                                          <div className='prof-details'>
-                                                                                                    <span className="name">{x.name}</span>
-
-                                                                                          </div>
-
-                                                                                </span>
+                                                                                })
+                                                                      }
 
 
+                                                            </span>
 
-                                                                      })
+                                                  </div>
+                                                  <div className="creator-search" >
+                                                            <span className="title">
+                                                                      Profiles
+                                                            </span>
 
-                                                            })
-                                                  }
+                                                            <span className="profilelist">
+                                                                      {
+                                                                                (details.profilelist.length !== 0) && details.profilelist.map((e) => {
 
-                                        </span>
 
-                              </div>
-                    </div>}
+                                                                                          return e.map((x) => {
 
-                    {/*-------------------------------- page loading --------------------------*/}
+                                                                                                    return <span key={x._id} onClick={() => navigate(`/userprofile/${x._id}`)}>
+                                                                                                              <img src={(x.profileimg !== '') ? x.profileimg : defaultimg} alt="loading" />
+                                                                                                              <div className='prof-details'>
+                                                                                                                        <span className="name">{x.name}</span>
 
-                    {(details.postlist.length === 0 && details.profilelist.length === 0 && loading) && <img src={gif} className='loading' alt='loading'/>}
-                     
-                     {/* --------------------------------no result------------------------------ */}
-                    
-                    {
-                              (details.postlist.length === 0 && details.profilelist.length === 0 && !loading) && <section className='warning-page'>
-                                        No such post or profile
-                              </section>
+                                                                                                              </div>
 
-                    }
+                                                                                                    </span>
+
+
+
+                                                                                          })
+
+                                                                                })
+                                                                      }
+
+                                                            </span>
+
+                                                  </div>
+                                        </div>}
+
+                              {/*-------------------------------- page loading --------------------------*/}
+
+                              {(details.postlist.length === 0 && details.profilelist.length === 0 && loading) && <img src={gif} className='loading' alt='loading' />}
+
+                              {/* --------------------------------no result------------------------------ */}
+
+                              {
+                                        (details.postlist.length === 0 && details.profilelist.length === 0 && !loading) && <section className='warning-page'>
+                                                  No such post or profile
+                                        </section>
+
+                              }
 
 
 
