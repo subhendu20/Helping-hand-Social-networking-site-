@@ -24,7 +24,7 @@ function Searchpage() {
 
                     })
                     setloading(true)
-                   
+
 
                     axios.post('/post/findpost', { query }, {
                               withCredentials: true
@@ -92,7 +92,7 @@ function Searchpage() {
 
                                                             <span className="profilelist">
                                                                       {
-                                                                                (details.profilelist.length !== 0) && details.profilelist.map((e) => {
+                                                                                (details.profilelist.length !== 0) ? details.profilelist.map((e) => {
 
 
                                                                                           return e.map((x) => {
@@ -110,7 +110,10 @@ function Searchpage() {
 
                                                                                           })
 
-                                                                                })
+                                                                                }) :
+                                                                                          <section className='warning-page'>
+                                                                                                    No such post or profile
+                                                                                          </section>
                                                                       }
 
                                                             </span>
