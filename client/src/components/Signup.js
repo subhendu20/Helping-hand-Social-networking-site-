@@ -39,7 +39,7 @@ function Signup() {
   const navigate = useNavigate();
   const cookie = new Cookies()
 
-  const[error,seterror]=useState('Please fill the form correctly')
+  const[error,seterror]=useState('Passwords are not same')
 
   const [formdata, setformdata] = useState({ name: "", email: "", area: "", state: "", mobile: null, password: "", confirmpassword: "" })
   const change = (e) => {
@@ -49,7 +49,7 @@ function Signup() {
   const handlesubmit = async (e) => {
     e.preventDefault()
 
-    if(formdata.name!=='' && formdata.email!=='' && formdata.area!=='' && formdata.state!=='' && formdata.mobile!==null && formdata.password!=='' && formdata.confirmpassword!=='' && formdata.password===formdata.confirmpassword){
+    if(formdata.password===formdata.confirmpassword){
       axios.post('/users/adduser', formdata, {
         withCredentials: true
       }).then(async (res) => {
@@ -106,7 +106,7 @@ function Signup() {
       
       <section className='page-title'>Create account</section>
       
-      <form className="form">
+      <form className="form" onClick={handlesubmit}>
       <div className="popup-warning-signup-window hide" id='popup-warning-signup-window'>
         <p>{error}</p>
         <i class='bx bx-x' onClick={close_invalid_format}></i>
@@ -121,7 +121,7 @@ function Signup() {
         <span><label htmlFor="state">State</label><input type="text" name="state" onChange={change} required  placeholder='Your state'/> </span>
         <span><label htmlFor="password">Password</label><input type="password" name="password" onChange={change} required placeholder='Enter a password' /> </span>
         <span><label htmlFor="confirmpassword">Confirm password</label><input type="password" name="confirmpassword" onChange={change} required placeholder='Re-enter password'/> </span>
-        <span className='button'><button onClick={handlesubmit}>Sign Up</button></span>
+        <span className='button'><button type='submit'>Sign Up</button></span>
         <span className='message'>Have an Account <Link to="/">Log In</Link></span>
 
 

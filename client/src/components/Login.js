@@ -77,16 +77,16 @@ function Login() {
     <section className='login'>
       
       <section className='page-title'>Log into your account</section> 
-       <form className="form">
+       <form className="form" onSubmit={submit}>
        <div className="popup-warning-window hide" id='popup-warning-window'>
         <p>Invalid details!</p>
         <i class='bx bx-x' onClick={close_invalid_message}></i>
         
         </div>
        
-                                        <span>Mobile : <input type="Number" placeholder="Enter Mobile Number" name="mobile" onChange={change} /></span>
-                                        <span>Password : <input type="password" placeholder="Enter password" name="password" onChange={change} /></span>
-                                        <span className='button'><button onClick={submit}>Log in</button></span>
+                                        <span>Mobile : <input type="Number" placeholder="Enter Mobile Number" name="mobile" onChange={change} required /></span>
+                                        <span>Password : <input type="password" placeholder="Enter password" name="password" onChange={change} required/></span>
+                                        <span className='button'><button type='submit'>Log in</button></span>
                                         <span className='signuplink'><p>Don't have an Account?</p><Link to="/signup">Sign up</Link></span>
 
                               </form>

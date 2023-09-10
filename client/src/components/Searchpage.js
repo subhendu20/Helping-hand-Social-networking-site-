@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import './css/searchpage.css'
 import Post from './Post'
 import defaultimg from './css/abstract-luxury-blur-grey-color-gradient-used-as-background-studio-wall-display-your-products.jpg'
-import {  useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios'
-import gif from './css/3WyW.gif'
+import gif from './css/Infinity-1s-200px.svg'
 
 function Searchpage() {
           const navigate = useNavigate()
@@ -14,41 +14,44 @@ function Searchpage() {
                     postlist: [],
                     profilelist: []
           })
-          const [loading,setloading]=useState(false)
-          const[loaded,setloaded]=useState(false)
+          const [loading, setloading] = useState(false)
 
 
           useEffect(() => {
-          
-                    axios.post('/post/findpost', {query}, {
+                    setloading(true)
+
+                    axios.post('/post/findpost', { query }, {
                               withCredentials: true
                     }).then(async (res) => {
-                              setloaded(true)
-                              
+
                               await setdetails({
-                                        postlist:res.data.posts,
-                                        profilelist:res.data.profiles
-                                        
+                                        postlist: res.data.posts,
+                                        profilelist: res.data.profiles
+
                               })
-                              await setloaded(false)
-                              setloading(true)
-                              
+
+                              setloading(false)
+
 
 
 
                     }).catch((e) => {
-                              
+
 
                     })
-                    
-
-
-          },[loading,query])
 
 
 
+          }, [query])
 
-          return ((!loaded)?
+
+
+
+          return (
+                    <React.Fragment>
+
+                              {/*------------------ if there are some result------------------ */}
+                    {(details.postlist.length !== 0 || details.profilelist.length !== 0) &&
                     <div className='searchresult'>
                               <div className="posts-search">
                                         <span className="title">
@@ -88,11 +91,11 @@ function Searchpage() {
 
                                                                       return e.map((x) => {
 
-                                                                                return <span key={x._id} onClick={()=>navigate(`/userprofile/${x._id}`)}>
+                                                                                return <span key={x._id} onClick={() => navigate(`/userprofile/${x._id}`)}>
                                                                                           <img src={(x.profileimg !== '') ? x.profileimg : defaultimg} alt="loading" />
                                                                                           <div className='prof-details'>
                                                                                                     <span className="name">{x.name}</span>
-                                                                                                    
+
                                                                                           </div>
 
                                                                                 </span>
@@ -107,7 +110,26 @@ function Searchpage() {
                                         </span>
 
                               </div>
-                    </div>:<img src={gif} className='loading' alt='loading'/>
+                    </div>}
+
+                    {/*-------------------------------- page loading --------------------------*/}
+
+                    {(details.postlist.length === 0 && details.profilelist.length === 0 && loading) && <img src={gif} className='loading' alt='loading'/>}
+                     
+                     {/* --------------------------------no result------------------------------ */}
+                    
+                    {
+                              (details.postlist.length === 0 && details.profilelist.length === 0 && !loading) && <section className='warning-page'>
+                                        No such post or profile
+                              </section>
+
+                    }
+
+
+
+                    </React.Fragment>
+
+
           )
 }
 
