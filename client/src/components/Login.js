@@ -76,7 +76,7 @@ function Login() {
   return (
     <section className='login'>
       
-      <section className='page-title'>Log into your account</section> 
+      <h1 className='page-title'>Log into your account</h1> 
        <form className="form" onSubmit={submit}>
        <div className="popup-warning-window hide" id='popup-warning-window'>
         <p>Invalid details!</p>
@@ -88,6 +88,7 @@ function Login() {
                                         <span>Password : <input type="password" placeholder="Enter password" name="password" onChange={change} required/></span>
                                         <span className='button'><button type='submit'>Log in</button></span>
                                         <span className='signuplink'><p>Don't have an Account?</p><Link to="/signup">Sign up</Link></span>
+                                        <span className='signuplink'><Link to="/changeauthdetails">Forget password</Link></span>
 
                               </form>
     </section>

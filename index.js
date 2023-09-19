@@ -7,6 +7,7 @@ const routelog = require('./Routers/Routerforlogs')
 const routepost = require('./Routers/Routerforpost')
 const routecomment = require('./Routers/Routerforcomment')
 const routeevent = require('./Routers/Routerforevent') 
+const routeForgetpass  = require('./Routers/Routerforforgetpass')
 const port = process.env.PORT || 7000
 const path = require('path')
 
@@ -17,7 +18,7 @@ app.use('/users',routelog)
 app.use('/post',routepost)
 app.use('/comment',routecomment)
 app.use('/events',routeevent)
-
+app.use('/user/verification',routeForgetpass)
 
 
 app.use(express.static(path.join(__dirname, './client/build')))
@@ -29,7 +30,7 @@ app.use('*',(req,res)=>{
 mongoose.connect(process.env.DB).then((e)=>{
           console.log("connected to database")
 }).catch((e)=>{
-          console.log("nt")
+          console.log(e)
 })
 
 

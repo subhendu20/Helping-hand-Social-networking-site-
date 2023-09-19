@@ -104,7 +104,7 @@ function Signup() {
   return (
     <section className='signup'>
       
-      <section className='page-title'>Create account</section>
+      <h1 className='page-title'>Create account</h1>
       
       <form className="form" onSubmit={handlesubmit}>
       <div className="popup-warning-signup-window hide" id='popup-warning-signup-window'>

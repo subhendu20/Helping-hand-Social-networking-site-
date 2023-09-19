@@ -25,6 +25,7 @@ import { useDispatch } from 'react-redux';
 import { logout } from './action';
 import { login } from './action';
 import gif from './components/css/Infinity-1s-200px.svg'
+import Forgetpassword from './components/Forgetpassword';
 
 function App() {
   const logstate = useSelector((state) => state.changeStatus)
@@ -219,6 +220,8 @@ function App() {
     (!logstate) ? <Routes>
       <Route path='/signup' element={<Signup />} />
       <Route path='/' element={<Login />} />
+      <Route path='/changeauthdetails' element={<Forgetpassword/>} />
+      
     </Routes> :
       <div className="window">
 

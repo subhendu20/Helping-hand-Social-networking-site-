@@ -21,7 +21,7 @@
           left:45%;
 
 }
-.login section.page-title{
+.login h1.page-title{
   font-size: 30px;
   color:rgb(36, 35, 35);
   font-weight: 500;
@@ -93,7 +93,7 @@
 
 .login .form span input::placeholder {
           color: rgb(85, 81, 81);
-          animation: 0.4s;
+         
 }
 
 .login .form span.button {
@@ -109,7 +109,7 @@
           border: none;
           border-radius: 5px;
           color: rgb(201, 200, 200);
-          transition: 0.4s;
+          transition: 0.3s;
 }
 
 .login .form span.button button:hover {
@@ -117,7 +117,7 @@
 
           background-color: rgb(41, 146, 102);
           color: white;
-          transform: scale(1.1);
+          
 }
 
 .login .form span a {
@@ -165,7 +165,7 @@
             
           
           }
-          .login section.page-title{
+          .login h1.page-title{
             font-size: 15px;
             margin: 5px 0px;
            

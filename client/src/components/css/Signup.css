@@ -21,7 +21,7 @@
           left:45%;
 
 }
-.signup section.page-title{
+.signup h1.page-title{
           font-size: 30px;
           color:rgb(36, 35, 35);
           font-weight: 500;
@@ -155,7 +155,7 @@
                     
           
           }
-          .signup section.page-title{
+          .signup h1.page-title{
                     font-size: 15px;
                     color:rgb(36, 35, 35);
                     font-weight: 500;
