@@ -18,12 +18,25 @@ router.use(cors( {
 router.use(cookie())
 
 
+
 //add new user
 router.post('/adduser',async(req,res)=>{
           const {name,email,mobile,area,state,password,confirmpassword} = req.body
-          if(password!==confirmpassword){
-                    return res.send("invalid")
+          
+// -----------------check wheather following mobile number assigned to another account or not
+
+          const findMob = await user.findOne({mobile})
+
+          if(findMob){
+                    return res.send("Mobile number already used. Want to try with a different number?")
           }
+          
+          const findMail = await user.findOne({email})
+
+          if(findMail){
+                    return res.send("This email already used. Want to try with a different email?")
+          }
+
           const salt = await hash.genSaltSync(11)
           const encryptpass = await hash.hashSync(password,salt)
           const newuser = new user({
@@ -45,9 +58,9 @@ router.post('/adduser',async(req,res)=>{
                     const token = await JWT.sign(b.id,process.env.TOKEN)
                     res.cookie('logtoken',token).send('in')
 
-                    res.send(newuser)
+                    res.send('success!')
           }).catch((e)=>{
-                    console.log(e)
+                    
           })
 })
 
@@ -68,7 +81,7 @@ router.post('/login',async(req,res)=>{
           
           const check = await hash.compare(password,b.password)
           if(!check){
-                    console.log(password+" "+b)
+                  
                     return res.send('invalid password')
           }
 
@@ -125,12 +138,12 @@ router.put('/update',async(req,res)=>{
 //get user details
 router.get('/getdetails',async(req,res)=>{
           const cookie = await req.cookies.logtoken
-          console.log(cookie)
+      
           if(!cookie){
                     return res.send("you are hai logged in")
           }
           const id = await JWT.verify(cookie,process.env.TOKEN)
-          console.log(id)
+        
           const userdetails = await user.findById(id).lean()
 
           res.send(userdetails)
@@ -145,7 +158,7 @@ router.post('/getdetails',async(req,res)=>{
           if(!cookie){
                     return res.send("you are hai logged in")
           }
-          console.log(req.body.userId)
+         
 
           const indivisualuserdetails = await user.findById(req.body.userId).lean()
           

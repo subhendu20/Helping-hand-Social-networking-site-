@@ -21,7 +21,7 @@ function Userprofile() {
           const { userId } = useParams()
 
           const [profiledata, setprofiledata] = useState({ name: '', area: '', state: '', profileimg: '', coverimg: '', about: '' })
-          const [loading, setloading] = useState(true)
+          const [loading, setloading] = useState(false)
           const [postlist, setpostlist] = useState({ posts: [] })
           const [postloading, setpostloading] = useState(false)
           const [followloading, setfollowloading] = useState(false)
@@ -137,7 +137,7 @@ function Userprofile() {
           // get user details
           useEffect(() => {
                     
-                    setloading(false)
+                    setloading(true)
 
                     axios.post('/users/getdetails', { userId }, {
                               withCredentials: true
@@ -159,7 +159,7 @@ function Userprofile() {
                     }).catch((e) => {
                     
                     })
-                    setloading(true)
+                    setloading(false)
 
 
 
@@ -177,7 +177,7 @@ function Userprofile() {
           //get post list
           useEffect(() => {
                     
-                    setpostloading(false)
+                    setpostloading(true)
 
                     axios.post('/post/postlist', { userId }, {
                               withCredentials: true
@@ -197,7 +197,7 @@ function Userprofile() {
                               
                     })
                     
-                    setpostloading(true)
+                    setpostloading(false)
 
 
 
@@ -221,7 +221,7 @@ function Userprofile() {
 
 
 
-          return ((profiledata.name!=='')?
+          return ((profiledata.name!=='' && !followloading && !postloading && !loading)?
                     <div className='user-profile'>
                               <img className='prof-image' src={(profiledata.profileimg === '') ? defaultimg : profiledata.profileimg} alt="loading" />
                               <div className="banner">

@@ -26,10 +26,10 @@ router.post('/addevent',async(req,res)=>{
                     return res.send("you are logged out")
           }
           const userid = await JWT.verify(cookie,process.env.TOKEN)
-          console.log(userid)
+         
           
           const users = await user.findById(userid)
-          console.log(users)
+         
           const newevent = new event({
                     user:userid,
                     username:users.name,
@@ -44,7 +44,7 @@ router.post('/addevent',async(req,res)=>{
           newevent.save().then(()=>{
                     res.send(newevent)
           }).catch((e)=>{
-                    console.log(e)
+                    
           })
 
 })
@@ -78,7 +78,7 @@ router.get('/geteventinarea',async(req,res)=>{
           
           const users = await user.findById(userid)
           const geteventsinarea = await event.find({area:users.area})
-          console.log(geteventsinarea)
+          
           res.send(geteventsinarea)
 
 })

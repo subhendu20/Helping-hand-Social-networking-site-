@@ -25,10 +25,9 @@ router.post('/postnote',async(req,res)=>{
                     return res.send("you are logged out")
           }
           const userid = await JWT.verify(cookie,process.env.TOKEN)
-          console.log(userid)
-          
+         
           const users = await user.findById(userid)
-          console.log(users)
+          
           const newpost = new post({
                     user:userid,
                     username:users.name,
@@ -43,7 +42,7 @@ router.post('/postnote',async(req,res)=>{
           newpost.save().then(()=>{
                     res.send(newpost)
           }).catch((e)=>{
-                    console.log(e)
+                    
           })
 })
 
@@ -86,7 +85,7 @@ router.put('/updatepost/:id',async(req,res)=>{
                     res.send(findpost)
 
           }).catch((e)=>{
-                    console.log(e)
+                   
           })
           
 
@@ -117,11 +116,11 @@ router.post('/findpost',async(req,res)=>{
           
           const users = await user.findById(userid)
           
-          console.log(req.body.query)
+         
           
           const keys= req.body.query.split(' ')
           for(var i=0;i<keys.length;i++){
-                    console.log(keys[i])
+                    
                     // ----for post----//
                     const finditem = await post.find({username:keys[i]})
                     //------for user---//
@@ -132,18 +131,18 @@ router.post('/findpost',async(req,res)=>{
                     const findtopic = await event.find({topic:keys[i],area:users.area})
 
                     if(findtopic ){
-                              console.log(findtopic)
+                           
                               list.push(findtopic)
                     }
                     
 
                     
                     if(finditem){
-                              console.log(finditem)
+                              
                               list.push(finditem)
                     }
                     if(findprofile){
-                              console.log(findprofile)
+                              
                               profilelist.push(findprofile)
                     }
 
@@ -163,7 +162,7 @@ router.get('/ownpost',async(req,res)=>{
                     return res.send("you are logged out")
           }
           const id = await JWT.verify(cookie,process.env.TOKEN)
-          console.log(id)
+          
           const posts = await post.find({user:id})
           res.send(posts)
 
@@ -205,7 +204,7 @@ router.patch('/addlike/:id',async(req,res)=>{
           findpost.save().then(()=>{
                     res.send(findpost)
           }).catch((e)=>{
-                    console.log(findpost)
+                   
           })
           
 
@@ -222,7 +221,7 @@ router.get('/neararea',async(req,res)=>{
           
           const users = await user.findById(userid)
           const accounts = await user.find({area:users.area})
-          console.log(accounts)
+          
           res.send(accounts)
 
 })
@@ -237,7 +236,7 @@ router.get('/nearstate',async(req,res)=>{
           
           const users = await user.findById(userid)
           const accounts = await user.find({state:users.state})
-          console.log(accounts)
+          
           res.send(accounts)
 
 })

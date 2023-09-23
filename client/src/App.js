@@ -10,7 +10,7 @@ import Cookies from 'universal-cookie'
 import $ from 'jquery'
 import "jquery-ui-dist/jquery-ui";
 import Editprofile from './components/Editprofile';
-import Setting from './components/Setting';
+
 import axios from 'axios'
 import Popupwindow from './components/Popupwindow';
 import Userprofile from './components/Userprofile';

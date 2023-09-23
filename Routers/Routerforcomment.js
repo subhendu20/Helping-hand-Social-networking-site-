@@ -26,7 +26,7 @@ router.post('/addcomment/:id',async(req,res)=>{
           if (!cookie) {
                     return res.send("you are logged out")
           }
-          console.log(cookie)
+        
           const userid = await JWT.verify(cookie, process.env.TOKEN)
 
           const users = await user.findById(userid)
@@ -41,7 +41,7 @@ router.post('/addcomment/:id',async(req,res)=>{
           newcomment.save().then(() => {
                     res.send(newcomment)
           }).catch((e) => {
-                    console.log(e)
+                  
           })
 
 })
@@ -71,7 +71,7 @@ router.patch('/updatecomment/:id',async(req,res)=>{
           findcomment.save().then(()=>{
                     res.send(findcomment)
           }).catch((e)=>{
-                    console.log(e)
+                    
           })
 
 
@@ -94,7 +94,7 @@ router.get('/getcomment/:id',async(req,res)=>{
 router.get('/addfollow/:id', async (req, res) => {
 
           const cookie = await req.cookies.logtoken
-          console.log(cookie)
+          
 
           if (!cookie) {
                     return res.send("you are logged out")
@@ -118,10 +118,10 @@ router.get('/addfollow/:id', async (req, res) => {
 
           })
           addfollower.save().then(() => {
-                    console.log("add")
+                   
                     res.send(addfollower)
           }).catch((e) => {
-                    console.log(e)
+                    
           })
 
 })
@@ -140,7 +140,7 @@ router.get('/removefollow/:id', async (req, res) => {
 
 
           })
-          console.log(del)
+          
           res.send(del)
 
 })
@@ -183,15 +183,14 @@ router.get('/getfollows', async (req, res) => {
 router.get('/followcheck/:id', async (req, res) => {
 
           const cookie = await req.cookies.logtoken
-          console.log(cookie)
+         
           if (!cookie) {
                     return res.send("you are logged out")
           }
           const userid = await JWT.verify(cookie, process.env.TOKEN)
 
           const followlist = await follows.findOne({ followid: req.params.id, followerid: userid })
-          console.log(`{followid:${req.params.id},followerid:${userid}}`)
-          console.log(followlist)
+         
           if(followlist===null) {
                     return res.send('no')
           }
@@ -212,7 +211,7 @@ router.get('/followerlist/:id', async (req, res) => {
           if (!cookie) {
                     return res.send("you are logged out")
           }
-          console.log(`cookies aa rah hu main ${cookie}`)
+         
           const followlist2 = await follows.find({ followid: req.params.id })
 
 

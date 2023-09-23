@@ -42,12 +42,12 @@ const sendmail = (email, otp) => {
 
           transporter.sendMail(mailoption,(error,info)=>{
                     if(error){
-                              console.log(error)
+                              
                               return false
                     }
                     if(info){
-                              console.log(info.response)
-                              return
+                            
+                              return true
                     }
           })
 
@@ -56,14 +56,14 @@ const sendmail = (email, otp) => {
 const changePassword= async(otpcode,newpassword)=>{
           const findCred = await otp.find({code:otpcode})
           if(findCred.length > 0){
-                    console.log(findCred)
+                    
                     const mail = await findCred[0].email
-                    console.log(mail)
+                    
                     const userData = await user.findOne({email:mail})
-                    console.log(userData)
+                   
                     const salt = await hash.genSaltSync(10)
                     const hashed = await hash.hashSync(newpassword, salt)
-                    console.log(userData.password)
+                    
                     userData.password = hashed
                     userData.save().then((res)=>{
                               return 'Password changed successfull'
