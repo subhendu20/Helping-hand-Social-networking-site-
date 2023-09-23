@@ -26,6 +26,7 @@ import { logout } from './action';
 import { login } from './action';
 import gif from './components/css/Infinity-1s-200px.svg'
 import Forgetpassword from './components/Forgetpassword';
+import Eventnearme from './components/Eventnearme';
 
 function App() {
   const logstate = useSelector((state) => state.changeStatus)
@@ -282,8 +283,8 @@ function App() {
                 <li className='side-span'> <Link to='/profile' className='center-a'> <i class='bx bxl-product-hunt'></i>
                   <p className='side-a col'>{profiledata.name}</p></Link>
                 </li>
-                <li className='side-span'> <Link to='/settings' className='center-a'> <i class='bx bxs-cog' ></i>
-                  <p className='side-a col' >Settings</p></Link>
+                <li className='side-span'> <Link to='/nearevents' className='center-a'> <i class='bx bxs-network-chart'></i>
+                  <p className='side-a col' >Services</p></Link>
                 </li>
                 <li className='side-span'> <Link to='/info' className='center-a'> <i class='bx bxs-info-circle'></i>
                   <p className='side-a col' >Info</p></Link>
@@ -320,7 +321,7 @@ function App() {
                 <Route path='/profile' element={<Profile />} />
                 <Route path='/' element={<Home />} />
                 <Route path='/editprofile' element={<Editprofile />} />
-                <Route path='/settings' element={<Setting />} />
+                <Route path='/nearevents' element={<Eventnearme/>} />
                 <Route path='/info' element={<Info />} />
                 <Route path='/userprofile/:userId' element={<Userprofile />} />
                 <Route path='/queryresult/:query' element={<Searchpage />} />

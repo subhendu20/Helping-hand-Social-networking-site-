@@ -33,8 +33,7 @@ const[profileloading2,setprofileloading2]=useState(false)
 
 //------------------------------------------------------for profile bar 3------------------------------------------//
 
-const[geteventloading,setgeteventloading]=useState(false)
-const[eventlist,seteventlist]=useState({events:[]})
+
 
 
 
@@ -106,34 +105,15 @@ const[eventlist,seteventlist]=useState({events:[]})
   },[profileloading2,countstate])
 
 
-   //-----------------------------------------------event near me-------------------------------------//
+   
 
-
-
-  useEffect(()=>{
-    
-    setgeteventloading(true)
-    
-      axios.get('/events/geteventinarea',{
-        withCredentials:true
-    }).then(async(res)=>{
-     
-      await seteventlist({
-        events:res.data
-      })
-      
-    }).catch((e)=>{
-      
-    })
-    setgeteventloading(true)
-  },[geteventloading,countstate])
-
-
+  
 
 
   return (
    
     (postlist.posts.length!==0) ? <div className='Home'>
+      
           <div className="posts-prefered-city">
           {
                               (postlist.posts.length!==0) && postlist.posts.map((e)=>{
@@ -157,16 +137,8 @@ const[eventlist,seteventlist]=useState({events:[]})
           
           
          
-          <hr />
-          <div className="divider">Services near you</div>
-          <div className="eventlist">
-          {
-                              (eventlist.events.length!==0) && eventlist.events.map((e)=>{
-                                return <Post key={e._id} post={e} type={'service'} />
-                              })
-                             }
           
-          </div>
+         
          
           
       
