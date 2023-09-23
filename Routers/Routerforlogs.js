@@ -56,9 +56,9 @@ router.post('/adduser',async(req,res)=>{
           newuser.save().then(async()=>{
                     const b = await user.findOne({mobile})
                     const token = await JWT.sign(b.id,process.env.TOKEN)
-                    res.cookie('logtoken',token).send('in')
+                    res.cookie('logtoken',token).send('success!')
 
-                    res.send('success!')
+                    
           }).catch((e)=>{
                     
           })

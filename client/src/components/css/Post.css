@@ -83,6 +83,7 @@
           position: absolute;
           top:0%;
           left:85%;
+          width: fit-content!important;
           padding: 10px;
           z-index: 14;
           font-size: 20px;
