@@ -126,7 +126,7 @@ function Signup() {
         </div>
 
         <span><label htmlFor="name">Name</label> <input type="text" name="name" onChange={change} required placeholder='Enter your name' /></span>
-        <span><label htmlFor="email">Email</label><input type="text" name="email" onChange={change} required placeholder='Enter your Email' /> </span>
+        <span><label htmlFor="email">Email</label><input type="email" name="email" onChange={change} required placeholder='Enter your Email' /> </span>
 
         <span><label htmlFor="mobile">Mobile</label><input type="Number" name="mobile" onChange={change} required minLength={10} placeholder='Enter your mobile number' /> </span>
         <span><label htmlFor="area">Area (Viil/city)</label><input type="text" name="area" onChange={change} required placeholder='Your area' /> </span>
