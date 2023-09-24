@@ -109,13 +109,13 @@
           border: none;
           border-radius: 5px;
           color: rgb(201, 200, 200);
-          transition: 0.3s;
+          transition: 0.4s;
 }
 
 .login .form span.button button:hover {
 
 
-          background-color: rgb(41, 146, 102);
+          background-color: rgb(35, 145, 53);
           color: white;
           
 }

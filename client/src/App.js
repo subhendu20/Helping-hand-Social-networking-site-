@@ -30,6 +30,7 @@ import Eventnearme from './components/Eventnearme';
 
 function App() {
   const logstate = useSelector((state) => state.changeStatus)
+  const countstate = useSelector((state) => state.changeCount)
 
   const dispatch = useDispatch()
 
@@ -184,7 +185,7 @@ function App() {
     })
     setloading(true)
 
-  }, [logstate])
+  }, [logstate,countstate])
 
 
 

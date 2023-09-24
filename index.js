@@ -12,8 +12,10 @@ const port = process.env.PORT || 7000
 const path = require('path')
 
 // middlewares
-app.use(middleware.urlencoded({ extended: false }));
-app.use(middleware.json());
+app.use(middleware.json({ limit: '100mb' }));
+app.use(middleware.urlencoded({ limit: '100mb', extended: true }));
+
+
 app.use('/users',routelog)
 app.use('/post',routepost)
 app.use('/comment',routecomment)

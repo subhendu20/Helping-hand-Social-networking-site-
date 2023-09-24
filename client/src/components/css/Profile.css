@@ -229,11 +229,13 @@
 }
 .profile .profile-details .posts .post-bar span.p{
           width: 40%;
+          cursor: pointer;
 }
 .profile .profile-details .posts .post-bar span.icons span i{
           margin :5px;
           color:rgb(47, 48, 47);
           font-size: 25px;
+          cursor: pointer;
 
 }
 

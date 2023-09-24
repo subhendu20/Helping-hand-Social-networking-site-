@@ -152,12 +152,12 @@
           padding: 10px;
           width: fit-content;
           margin: auto;
-          font-weight: 200px;
+          font-weight: 400;
           transition: 0.4s;
 }
 
 .update-profile form.details span.buttons button:hover {
-          background-color: rgb(41, 146, 102);
+          background-color: rgb(35, 145, 53);
 }
 
 

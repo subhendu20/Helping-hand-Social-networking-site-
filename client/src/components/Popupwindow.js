@@ -72,7 +72,7 @@ function Popupwindow() {
       await $('#popup-profile-window').addClass('hide')
       await $('#app-main').removeClass('reduceopacity')
 
-      await navigate('/profile')
+      await navigate('/')
       dispatch(countIncrease())
 
     }).catch((e) => {

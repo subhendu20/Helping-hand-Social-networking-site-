@@ -241,6 +241,7 @@
   left:35%;
 
   z-index: 10;
+  border-radius: 10px;
   box-shadow: rgba(10, 10, 10, 0.801) 0px 5px 15px;;
 
 }
@@ -257,6 +258,7 @@
   top:20%;
   left:35%;
 
+  border-radius: 10px;
   z-index: 10;
   box-shadow: rgba(10, 10, 10, 0.801) 0px 5px 15px;;
 

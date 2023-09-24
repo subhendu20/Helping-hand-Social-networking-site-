@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux/es/hooks/useSelector';
 import Post from './Post';
 import './css/Eventnearme.css'
 import gif from './css/Infinity-1s-200px.svg';
+import $ from 'jquery'
+import "jquery-ui-dist/jquery-ui";
 function Eventnearme() {
           const countstate = useSelector((state) => state.changeCount)
           const [geteventloading, setgeteventloading] = useState(false)
@@ -27,20 +29,30 @@ function Eventnearme() {
                     })
                     setgeteventloading(false)
           }, [geteventloading, countstate])
+
+
+
+
+          const open_post_popup = () => {
+                    $('#popup-profile-window').removeClass('hide')
+                    $('#app-main').addClass('reduceopacity')
+          }
           return (
-                    
-                    (!geteventloading) ?<div className='event-home'>
+
+                    (!geteventloading) ? <div className='event-home'>
                               <h2>Services near you</h2>
-                              <div className="eventlist">
-                                        {
-                                                  (eventlist.events.length !== 0) && eventlist.events.map((e) => {
-                                                            return <Post key={e._id} post={e} type={'service'} />
-                                                  })
+                              {(eventlist.events.length !==0) ? <div className="eventlist">
+
+
+                                        {(eventlist.events.length !== 0) && eventlist.events.map((e) => {
+                                                  return <Post key={e._id} post={e} type={'service'} />
+                                        })
                                         }
 
-                              </div>
 
-                    </div>:<img src={gif} className='loading' alt='loading'/>
+                              </div> :<div className='empty-message'>No services are available on your area.Post your need. <b onClick={open_post_popup}>Post my need</b>  </div>}
+
+                    </div> : <img src={gif} className='loading' alt='loading' />
           )
 }
 
