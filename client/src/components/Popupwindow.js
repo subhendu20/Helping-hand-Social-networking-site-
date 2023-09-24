@@ -67,6 +67,7 @@ function Popupwindow() {
     axios.post('/post/postnote', formdata, {
       withCredentials: true
     }).then(async (res) => {
+      await $('.form-input-pop').val('')
       await setsubloading(false)
 
       await $('#popup-profile-window').addClass('hide')
@@ -88,11 +89,11 @@ function Popupwindow() {
       <span className="text">Post Your Need</span>
 
       <span className='headings'>Topic (Use specific keyword,Ex- Medicine)</span>
-      <span className="title"><input type="text" name='topic' placeholder='Title' onChange={change} required /></span>
+      <span className="title"><input type="text" name='topic' placeholder='Title' onChange={change} required className='form-input-pop'/></span>
       <span className='headings'>Location(Area/city/state)</span>
-      <span className="title"><input type="text" name='location' placeholder='Location' onChange={change} required/></span>
+      <span className="title"><input type="text" name='location' placeholder='Location' onChange={change} required className='form-input-pop'/></span>
       <span className='headings'>Write a brief description</span>
-      <span className="textarea"><textarea name="description" id="" cols="30" rows="8" placeholder='Description' onChange={change} required></textarea></span>
+      <span className="textarea"><textarea name="description" id="" cols="30" rows="8" placeholder='Description' onChange={change} required className='form-input-pop'></textarea></span>
       <span className="buttons"><button type='submit'>POST</button></span>
 
 
