@@ -259,7 +259,7 @@ function Userprofile() {
                                                                                                     }</div>
 
                                                                                 </span>
-                                                                                {(userId===localStorage.getItem('idu')) && <button className="edit" onClick={followuser}>{follow}</button>}
+                                                                                {(userId!==localStorage.getItem('idu')) && <button className="edit" onClick={followuser}>{follow}</button>}
 
 
                                                                       </span>
