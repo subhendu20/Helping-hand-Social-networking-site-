@@ -295,11 +295,12 @@ function App() {
 
 
               </ul>
+              
+
+              <ul class="icons2">
               <b>
                 Following
               </b>
-
-              <ul class="icons2">
 
                 {
                   (followerlist.followers.length !== 0) && followerlist.followers.map((e) => {

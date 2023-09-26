@@ -6,6 +6,8 @@ import axios from 'axios'
 import cover from './css/abstract-luxury-blur-grey-color-gradient-used-as-background-studio-wall-display-your-products.jpg';
 import { countIncrease } from '../action/update';
 import { useDispatch } from 'react-redux';
+import $ from 'jquery'
+import "jquery-ui-dist/jquery-ui";
 
 function Editprofile() {
   const dispatch = useDispatch()
@@ -71,7 +73,7 @@ function Editprofile() {
         const Save_update=(e)=>{
           
           e.preventDefault()
-          
+          $('.update-profile').toggleClass('blur-back')
           axios.put('/users/update', prevalue, {
             withCredentials: true
         }).then((res)=>{
@@ -79,6 +81,7 @@ function Editprofile() {
             alert('Inavalid entry')
           }
           else{
+            $('.update-profile').toggleClass('blur-back')
             dispatch(countIncrease())
             
             navigate('/profile')

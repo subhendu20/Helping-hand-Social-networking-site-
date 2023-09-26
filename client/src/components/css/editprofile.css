@@ -160,6 +160,10 @@
           background-color: rgb(35, 145, 53);
 }
 
+.update-profile.blur-back{
+          opacity: 0.5;
+          pointer-events: none!important;
+}
 
 @media (max-width:800px) {
           .update-profile form.profile-image {
