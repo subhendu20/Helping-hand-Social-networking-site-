@@ -295,6 +295,9 @@ function App() {
 
 
               </ul>
+              <b>
+                Following
+              </b>
 
               <ul class="icons2">
 
