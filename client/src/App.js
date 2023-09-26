@@ -256,8 +256,7 @@ function App() {
               <div className="dropdown none" id='dropdown'>
                 <span><i class='bx bxl-product-hunt' ></i><Link to="/profile">{profiledata.name.split(' ')[0]}</Link></span>
 
-                <hr />
-                <span className="setting"><Link to="/settings">Setting</Link></span>
+               
                 <hr />
                 <span className="Edit"><Link to="/editprofile">Edit profile</Link></span>
                 <hr />
